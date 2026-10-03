@@ -10,3 +10,12 @@ models/
 !/evaluation/compare_jevbench_accuracy.py
 runs
 RUN2
+# Ollama2Jev temporary benchmark outputs
+*_test.jsonl
+ollama2jev_jevbench_test.jsonl
+
+# Python environment
+.venv/
+
+# Logs
+*.log

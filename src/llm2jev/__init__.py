@@ -17,6 +17,7 @@ from .backend import (
     MLXBackend,
     SGLangBackend,
     TransformersBackend,
+    OllamaBackend,
 )
 from .core import (
     Answer,
@@ -64,4 +65,5 @@ __all__ = [
     "compile_binary_questions",
     "normalize_l1",
     "serialize_content",
+    "OllamaBackend",
 ]
