@@ -1,13 +1,13 @@
 {
-  "captured_at": "2026-10-17T15:00:12.692144+00:00",
+  "captured_at": "2026-10-17T15:42:14.716049+00:00",
   "model": "tev1:4b",
   "digest": "7954dce22bc6c29c3b119656207681d12cb34434fed7caa086bfbc919bef0740",
   "size": 4610594686,
-  "modified_at": "2026-10-17T22:52:34.153400335+09:00",
+  "modified_at": "2026-10-18T00:41:49.323365171+09:00",
   "ollama_version": "0.40.5",
   "python": "3.10.12",
   "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
-  "repo_git_sha": "e628a20da899ddddd7d380f774396c987a45ebe6",
+  "repo_git_sha": "6bb322fa75ddf69cb6a1726db176bec5cd9b3011",
   "model_info": {
     "general.architecture": "qwen35",
     "general.base_model.0.name": "Qwen3.5 4B",
