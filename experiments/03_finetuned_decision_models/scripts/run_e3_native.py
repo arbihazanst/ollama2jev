@@ -244,7 +244,10 @@ def aggregate_model(model, tasks, result_root, smoke):
         by_type[typ] = {"tasks": denom, "recorded": len(typ_rows),
                         "successful": sum(r["status"] == "ok" for r in typ_rows),
                         "correct": sum(bool(r.get("correct")) for r in typ_rows),
-                        "accuracy": sum(bool(r.get("correct")) for r in typ_rows) / denom}
+                        "accuracy": (
+                            sum(bool(r.get("correct")) for r in typ_rows) / denom
+                            if denom > 0 else None
+                        )}
     latencies = [r["latency_s"] for r in valid]
     warm = latencies[1:]
     result = {"model": model, "protocol": PROTOCOL, "mode": "smoke" if smoke else "full",
