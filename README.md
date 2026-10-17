@@ -50,6 +50,21 @@ Ollama:
 - **JevBench evaluation:** includes full results on all 231 public JevBench
   tasks across multiple Ollama-served models.
 
+## Experimental Evaluation
+
+Ollama2Jev provides a reproducible evaluation framework for structured probabilistic decision inference using open large language models.
+
+The experimental program includes:
+
+- **E1 — General-Purpose LLM Benchmark:** Evaluation of 11 Ollama model configurations across 231 public JevBench tasks.
+- **E2 — Zero-Shot Baselines and Scoring Ablations:** Evaluation of binary-conditional scoring, yes-only likelihood scoring, hard candidate scoring, and top-k sensitivity. The Z1–Z4 analyses are completed; the direct zero-shot generation baseline (Z0) is planned.
+- **E3 — Fine-Tuned Decision Models:** Planned comparisons with Nimble v3, Tev1, Clef Flash, Clef, and Strands Decider.
+- **E4 — Backend Fidelity and Robustness:** Planned comparisons between exact-logit inference and Ollama's one-token top-logprob interface.
+
+Completed experimental results, reproducibility scripts, and proposed evaluation protocols are documented in the [Experiments Directory](experiments/README.md).
+
+All completed scoring ablations are reconstructed from the original model-level JevBench results without additional inference.
+
 ## Relationship to LLM2Jev
 
 Ollama2Jev does **not** replace the LLM2Jev pipeline. It extends it at the
@@ -91,18 +106,3 @@ normalization + typed response assembly
    |
    v
 Choice / Score / Noul
-
-## Experimental Evaluation
-
-Ollama2Jev provides a reproducible evaluation framework for structured probabilistic decision inference using open large language models.
-
-The experimental program includes:
-
-- **E1 — General-Purpose LLM Benchmark:** Evaluation of 11 Ollama model configurations across 231 public JevBench tasks.
-- **E2 — Zero-Shot Baselines and Scoring Ablations:** Evaluation of binary-conditional scoring, yes-only likelihood scoring, hard candidate scoring, and top-k sensitivity. The Z1–Z4 analyses are completed; the direct zero-shot generation baseline (Z0) is planned.
-- **E3 — Fine-Tuned Decision Models:** Planned comparisons with Nimble v3, Tev1, Clef Flash, Clef, and Strands Decider.
-- **E4 — Backend Fidelity and Robustness:** Planned comparisons between exact-logit inference and Ollama's one-token top-logprob interface.
-
-Completed experimental results, reproducibility scripts, and proposed evaluation protocols are documented in the [Experiments Directory](experiments/README.md).
-
-All completed scoring ablations are reconstructed from the original model-level JevBench results without additional inference.
