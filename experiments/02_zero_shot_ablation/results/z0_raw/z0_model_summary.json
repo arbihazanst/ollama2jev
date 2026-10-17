@@ -1,0 +1,431 @@
+[
+  {
+    "model": "qwen3.5:0.8b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 131,
+    "accuracy": 0.5670995670995671,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 79,
+        "accuracy": 0.5683453237410072
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 47,
+        "accuracy": 0.6351351351351351
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 5,
+        "accuracy": 0.2777777777777778
+      }
+    },
+    "first_decision_latency_s": 6.493925824761391,
+    "warm_p50_latency_s": 0.08950834162533283,
+    "warm_p95_latency_s": 0.29008465539664025,
+    "mean_output_tokens_per_completed_decision": 3.017316017316017
+  },
+  {
+    "model": "qwen3.5:2b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 229,
+    "invalid": 2,
+    "errors": 0,
+    "correct": 152,
+    "accuracy": 0.658008658008658,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 137,
+        "correct": 94,
+        "accuracy": 0.6762589928057554
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 49,
+        "accuracy": 0.6621621621621622
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 9,
+        "accuracy": 0.5
+      }
+    },
+    "first_decision_latency_s": 0.10731227695941925,
+    "warm_p50_latency_s": 0.11790589801967144,
+    "warm_p95_latency_s": 0.3871050467714667,
+    "mean_output_tokens_per_completed_decision": 2.9956709956709955
+  },
+  {
+    "model": "qwen3.5:4b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 181,
+    "accuracy": 0.7835497835497836,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 109,
+        "accuracy": 0.7841726618705036
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 59,
+        "accuracy": 0.7972972972972973
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 13,
+        "accuracy": 0.7222222222222222
+      }
+    },
+    "first_decision_latency_s": 6.97814729437232,
+    "warm_p50_latency_s": 0.24895405024290085,
+    "warm_p95_latency_s": 0.7863493317738175,
+    "mean_output_tokens_per_completed_decision": 2.965367965367965
+  },
+  {
+    "model": "qwen3.5:9b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 189,
+    "accuracy": 0.8181818181818182,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 114,
+        "accuracy": 0.8201438848920863
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 61,
+        "accuracy": 0.8243243243243243
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    },
+    "first_decision_latency_s": 7.077240787446499,
+    "warm_p50_latency_s": 0.2991618234664202,
+    "warm_p95_latency_s": 1.2362161945551633,
+    "mean_output_tokens_per_completed_decision": 2.9956709956709955
+  },
+  {
+    "model": "qwen3.8:latest",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 181,
+    "accuracy": 0.7835497835497836,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 122,
+        "accuracy": 0.8776978417266187
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 45,
+        "accuracy": 0.6081081081081081
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    },
+    "first_decision_latency_s": 25.08104592934251,
+    "warm_p50_latency_s": 0.955488458275795,
+    "warm_p95_latency_s": 3.2181972162798047,
+    "mean_output_tokens_per_completed_decision": 3.069264069264069
+  },
+  {
+    "model": "llama3.2:1b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 222,
+    "invalid": 9,
+    "errors": 0,
+    "correct": 92,
+    "accuracy": 0.39826839826839827,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 130,
+        "correct": 47,
+        "accuracy": 0.3381294964028777
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 36,
+        "accuracy": 0.4864864864864865
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 9,
+        "accuracy": 0.5
+      }
+    },
+    "first_decision_latency_s": 5.2018365152180195,
+    "warm_p50_latency_s": 0.07415183447301388,
+    "warm_p95_latency_s": 0.29161405060440304,
+    "mean_output_tokens_per_completed_decision": 2.9264069264069263
+  },
+  {
+    "model": "llama3.2:3b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 230,
+    "invalid": 1,
+    "errors": 0,
+    "correct": 141,
+    "accuracy": 0.6103896103896104,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 138,
+        "correct": 84,
+        "accuracy": 0.60431654676259
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 45,
+        "accuracy": 0.6081081081081081
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 12,
+        "accuracy": 0.6666666666666666
+      }
+    },
+    "first_decision_latency_s": 0.06018723547458649,
+    "warm_p50_latency_s": 0.07486875727772713,
+    "warm_p95_latency_s": 0.5409515468403696,
+    "mean_output_tokens_per_completed_decision": 2.9134199134199132
+  },
+  {
+    "model": "granite4.2:3b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 148,
+    "accuracy": 0.6406926406926406,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 94,
+        "accuracy": 0.6762589928057554
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 47,
+        "accuracy": 0.6351351351351351
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 7,
+        "accuracy": 0.3888888888888889
+      }
+    },
+    "first_decision_latency_s": 5.956655248999596,
+    "warm_p50_latency_s": 0.08425631374120712,
+    "warm_p95_latency_s": 0.6176117623224855,
+    "mean_output_tokens_per_completed_decision": 3.4242424242424243
+  },
+  {
+    "model": "granite4.2:8b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 216,
+    "invalid": 15,
+    "errors": 0,
+    "correct": 167,
+    "accuracy": 0.7229437229437229,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 127,
+        "correct": 100,
+        "accuracy": 0.7194244604316546
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 71,
+        "correct": 56,
+        "accuracy": 0.7567567567567568
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 11,
+        "accuracy": 0.6111111111111112
+      }
+    },
+    "first_decision_latency_s": 6.932439360767603,
+    "warm_p50_latency_s": 0.1278186086565256,
+    "warm_p95_latency_s": 1.1345914155244827,
+    "mean_output_tokens_per_completed_decision": 6.5064935064935066
+  },
+  {
+    "model": "gemma4:e2b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 230,
+    "invalid": 1,
+    "errors": 0,
+    "correct": 159,
+    "accuracy": 0.6883116883116883,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 100,
+        "accuracy": 0.7194244604316546
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 46,
+        "accuracy": 0.6216216216216216
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 17,
+        "correct": 13,
+        "accuracy": 0.7222222222222222
+      }
+    },
+    "first_decision_latency_s": 5.462404523044825,
+    "warm_p50_latency_s": 0.11684730276465416,
+    "warm_p95_latency_s": 0.5863264935091137,
+    "mean_output_tokens_per_completed_decision": 3.3636363636363638
+  },
+  {
+    "model": "gemma4:e4b",
+    "method": "Z0_direct_zero_shot_generation",
+    "prompt_version": "z0-direct-v1",
+    "tasks": 231,
+    "completed": 231,
+    "valid": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 181,
+    "accuracy": 0.7835497835497836,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "completed": 139,
+        "valid": 139,
+        "correct": 110,
+        "accuracy": 0.7913669064748201
+      },
+      "noul": {
+        "tasks": 74,
+        "completed": 74,
+        "valid": 74,
+        "correct": 57,
+        "accuracy": 0.7702702702702703
+      },
+      "score": {
+        "tasks": 18,
+        "completed": 18,
+        "valid": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    },
+    "first_decision_latency_s": 7.250720884650946,
+    "warm_p50_latency_s": 0.1667438205331564,
+    "warm_p95_latency_s": 0.8944303127005697,
+    "mean_output_tokens_per_completed_decision": 3.346320346320346
+  }
+]
