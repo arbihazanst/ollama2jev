@@ -19,7 +19,7 @@ PAIRS = (
     ("qwen3.5:9b", "nimble-v3:9b"),
     ("qwen3.5:9b", "clef-flash:9b"),
     ("qwen3.8:latest", "clef:27b"),
-    ("qwen3.8:latest", "pplx-decider:27b"),
+    ("qwen3.8:latest", "pplx-decider:latest"),
 )
 ROOT = Path(__file__).resolve().parents[3]
 E1_RAW = ROOT / "experiments" / "01_general_llm_benchmark" / "results" / "raw"

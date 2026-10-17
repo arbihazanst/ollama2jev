@@ -13,7 +13,7 @@ Compare native decision-model inference using Ollama's `/v1/systemone` endpoint 
 | `nimble-v3:9b` | `qwen3.5:9b` |
 | `clef-flash:9b` | `qwen3.5:9b` |
 | `clef:27b` | `qwen3.8:latest` |
-| `pplx-decider:27b` | `qwen3.8:latest` |
+| `pplx-decider:latest` | `qwen3.8:latest` |
 
 ## Reproducibility details
 
@@ -30,7 +30,7 @@ Compare native decision-model inference using Ollama's `/v1/systemone` endpoint 
 
 `nimble-v3:9b` requires **Ollama >= 0.40.4**. Local `/v1/systemone` is supported in Ollama 0.35+, but individual model version requirements vary. Check `ollama --version` and `ollama list` before running.
 
-Pull tags *exactly* (the PPLX tag must be verified locally; if unavailable use `pplx-decider:latest` deliberately and update `MODELS` and the comparison mapping to reflect the actual tag):
+Pull the exact tags used in the benchmark; the preflight check requires `pplx-decider:latest` to be installed:
 
 ```bash
 ollama pull tev1:0.8b
@@ -38,7 +38,7 @@ ollama pull tev1:4b
 ollama pull nimble-v3:9b
 ollama pull clef-flash:9b
 ollama pull clef:27b
-ollama pull pplx-decider:27b
+ollama pull pplx-decider:latest
 ollama list
 ```
 

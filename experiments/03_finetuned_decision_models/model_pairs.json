@@ -7,6 +7,6 @@
     {"parent": "qwen3.5:9b", "native": "nimble-v3:9b", "maker": "Bespoke Labs"},
     {"parent": "qwen3.5:9b", "native": "clef-flash:9b", "maker": "Cloudflare"},
     {"parent": "qwen3.8:latest", "native": "clef:27b", "maker": "Cloudflare"},
-    {"parent": "qwen3.8:latest", "native": "pplx-decider:27b", "maker": "Perplexity"}
+    {"parent": "qwen3.8:latest", "native": "pplx-decider:latest", "maker": "Perplexity"}
   ]
 }

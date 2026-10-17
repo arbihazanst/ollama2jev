@@ -25,7 +25,7 @@ from urllib.request import Request, urlopen
 
 MODELS = (
     "tev1:0.8b", "tev1:4b", "nimble-v3:9b",
-    "clef-flash:9b", "clef:27b", "pplx-decider:27b",
+    "clef-flash:9b", "clef:27b", "pplx-decider:latest",
 )
 PROTOCOL = "e3-native-systemone-v1"
 TYPES = {"choice": 139, "noul": 74, "score": 18}
