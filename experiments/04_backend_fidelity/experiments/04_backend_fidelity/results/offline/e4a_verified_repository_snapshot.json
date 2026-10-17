@@ -1,0 +1,15 @@
+{
+  "data_source": "GitHub arbihazanst/ollama2jev E1 recorded JSONL, inspected 2026-10-17",
+  "status": "verified from remotely committed records",
+  "models": 11,
+  "decisions": 2541,
+  "recorded_candidate_attempts": 9327,
+  "candidate_attempts_with_both_logprobs": 9324,
+  "candidate_attempts_without_full_coverage": 3,
+  "fully_successful_decisions": 2538,
+  "failed_decisions": 3,
+  "maximum_absolute_reconstruction_error": 2.7755575615628914e-17,
+  "interpretation": "Numerical replay confirms equality of the archived conditional p_yes with the pairwise softmax of archived yes and no log probabilities. This is not evidence of full-vocabulary or cross-engine logit agreement.",
+  "uncovered_model": "granite4.2:8b",
+  "uncovered_task_ids": ["easy-tool_selection-00", "easy-tool_selection-02", "easy-tool_selection-05"]
+}

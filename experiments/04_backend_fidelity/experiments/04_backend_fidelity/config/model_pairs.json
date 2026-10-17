@@ -1,0 +1,27 @@
+{
+  "protocol": "e4-cross-stack-v1",
+  "status": "E4A complete from E1; E4B requires a controlled server run",
+  "primary_pair": {
+    "ollama_tag": "qwen3.5:0.8b",
+    "hf_model_id": "Qwen/Qwen3.5-0.8B",
+    "hf_local_directory": "/path/to/downloaded/Qwen3.5-0.8B",
+    "warning": "HF post-trained FP/bfloat weights and Ollama quantized GGUF are not bit-identical, even if nominal parent model matches. Ollama chat rendering is not proven identical to HF tokenizer rendering. Interpret as cross-stack agreement, NOT exact same-weights fidelity."
+  },
+  "secondary_pair": {
+    "ollama_tag": "qwen3.5:4b",
+    "hf_model_id": "Qwen/Qwen3.5-4B",
+    "warning": "Requires substantially more GPU memory than 0.8B."
+  },
+  "defaults": {
+    "one_to_one_binary_calls": true,
+    "ollama_top_logprobs": 20,
+    "ollama_temperature": 0,
+    "ollama_think": false,
+    "hf_enable_thinking": false,
+    "hf_batch_size": 1,
+    "repetitions": 3,
+    "stratified_sample_seed": 42,
+    "pilot_per_type": 5,
+    "primary_per_type": 18
+  }
+}
