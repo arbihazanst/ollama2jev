@@ -1,0 +1,74 @@
+[
+  {
+    "model": "qwen3.5:2b",
+    "tasks": 231,
+    "successful": 231,
+    "correct": 148,
+    "accuracy": 0.6406926406926406,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "correct": 88,
+        "accuracy": 0.6330935251798561
+      },
+      "noul": {
+        "tasks": 74,
+        "correct": 49,
+        "accuracy": 0.6621621621621622
+      },
+      "score": {
+        "tasks": 18,
+        "correct": 11,
+        "accuracy": 0.6111111111111112
+      }
+    }
+  },
+  {
+    "model": "qwen3.5:4b",
+    "tasks": 231,
+    "successful": 231,
+    "correct": 164,
+    "accuracy": 0.70995670995671,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "correct": 101,
+        "accuracy": 0.7266187050359713
+      },
+      "noul": {
+        "tasks": 74,
+        "correct": 49,
+        "accuracy": 0.6621621621621622
+      },
+      "score": {
+        "tasks": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    }
+  },
+  {
+    "model": "qwen3.8:latest",
+    "tasks": 231,
+    "successful": 231,
+    "correct": 197,
+    "accuracy": 0.8528138528138528,
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "correct": 121,
+        "accuracy": 0.8705035971223022
+      },
+      "noul": {
+        "tasks": 74,
+        "correct": 62,
+        "accuracy": 0.8378378378378378
+      },
+      "score": {
+        "tasks": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    }
+  }
+]
