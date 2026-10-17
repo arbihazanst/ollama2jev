@@ -1,0 +1,12 @@
+model,tasks,complete,failed,candidate_attempts,covered,missing,coverage,mean_absolute_probability_error,maximum_absolute_probability_error,uncovered_task_ids
+gemma4-e2b,231,231,0,849,849,0,1.0,0.0,0.0,
+gemma4-e4b,231,231,0,849,849,0,1.0,0.0,0.0,
+granite4.2-3b,231,231,0,849,849,0,1.0,0.0,0.0,
+granite4.2-8b,231,228,3,837,834,3,0.996415770609319,0.0,0.0,easy-tool_selection-00;easy-tool_selection-02;easy-tool_selection-05
+llama3.2-1b,231,231,0,849,849,0,1.0,0.0,0.0,
+llama3.2-3b,231,231,0,849,849,0,1.0,0.0,0.0,
+qwen3.5-0.8b,231,231,0,849,849,0,1.0,0.0,0.0,
+qwen3.5-2b,231,231,0,849,849,0,1.0,0.0,0.0,
+qwen3.5-4b,231,231,0,849,849,0,1.0,0.0,0.0,
+qwen3.5-9b,231,231,0,849,849,0,1.0,0.0,0.0,
+qwen3.8-latest,231,231,0,849,849,0,1.0,0.0,0.0,
