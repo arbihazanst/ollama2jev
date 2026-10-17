@@ -1,0 +1,3 @@
+## Experiments and reproducibility
+
+The completed 11-model JevBench evaluation is preserved in the original root-level `ollama2jev_jevbench_*_full.jsonl` and `ollama2jev_jevbench_11models_summary.json` artifacts. The [`experiments/`](experiments/README.md) directory organizes this benchmark, the **completed offline Z2–Z4 ablations** (including replay code and compact CSV summaries), and explicit designs for the **not-yet-executed** zero-shot generation, specialized decision-model, and exact-logit fidelity experiments. This separation prevents proposed experiments from being mistaken for empirical findings.

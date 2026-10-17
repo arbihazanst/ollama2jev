@@ -1,0 +1,49 @@
+{
+  "dataset": {
+    "name": "JevBench public",
+    "n_items": 231,
+    "choice": 139,
+    "noul": 74,
+    "score": 18,
+    "required_files": [
+      "original.jsonl",
+      "easy.jsonl",
+      "hard.jsonl"
+    ]
+  },
+  "n_models": 11,
+  "n_total_task_attempts": 2541,
+  "status": {
+    "Z0": "planned_no_results",
+    "Z1": "complete_original",
+    "Z2": "complete_offline",
+    "Z3": "complete_offline",
+    "Z4": "complete_offline"
+  },
+  "variants": {
+    "Z1": "binary normalized yes/no logprobs",
+    "Z2": "unnormalized yes token likelihood (with typed assembler)",
+    "Z3": "hard q>=0.5 then typed assembler",
+    "Z4": "offline top-k rank threshold k=2,5,10,20"
+  },
+  "model_tags": [
+    "qwen3.5:0.8b",
+    "qwen3.5:2b",
+    "qwen3.5:4b",
+    "qwen3.5:9b",
+    "qwen3.8:latest",
+    "llama3.2:1b",
+    "llama3.2:3b",
+    "granite4.2:3b",
+    "granite4.2:8b",
+    "gemma4:e2b",
+    "gemma4:e4b"
+  ],
+  "source": {
+    "repository": "https://github.com/arbihazanst/ollama2jev",
+    "branch": "ollama2jev",
+    "source_commit": "b6f3070dbc4ceaba85d9c2c8003547300a300d52",
+    "jevbench_dataset_commit": "TO_RECORD_FROM_DATASET_CHECKOUT"
+  },
+  "note": "Offline Z2-Z4 read original binary probabilities and ranks; no Ollama inference."
+}
