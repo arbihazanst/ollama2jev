@@ -1,0 +1,290 @@
+[
+  {
+    "model": "tev1:0.8b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "full",
+    "tasks": 231,
+    "recorded": 231,
+    "successful": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 140,
+    "accuracy": 0.6060606060606061,
+    "ci_wilson_95": [
+      0.5418083273058381,
+      0.6668430762668693
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "recorded": 139,
+        "successful": 139,
+        "correct": 84,
+        "accuracy": 0.60431654676259
+      },
+      "noul": {
+        "tasks": 74,
+        "recorded": 74,
+        "successful": 74,
+        "correct": 44,
+        "accuracy": 0.5945945945945946
+      },
+      "score": {
+        "tasks": 18,
+        "recorded": 18,
+        "successful": 18,
+        "correct": 12,
+        "accuracy": 0.6666666666666666
+      }
+    },
+    "probability_valid_n": 231,
+    "brier": 0.5192095112602584,
+    "ece10": 0.1696785544284277,
+    "nll": 0.992578420067077,
+    "first_success_latency_s": 0.048216432332992554,
+    "warm_p50_s": 0.025077881291508675,
+    "warm_p95_s": 0.1564538264647126,
+    "mean_input_tokens_per_success": 715.3982683982684,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "tev1:4b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "full",
+    "tasks": 231,
+    "recorded": 231,
+    "successful": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 175,
+    "accuracy": 0.7575757575757576,
+    "ci_wilson_95": [
+      0.6983904669524358,
+      0.808334370295568
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "recorded": 139,
+        "successful": 139,
+        "correct": 108,
+        "accuracy": 0.7769784172661871
+      },
+      "noul": {
+        "tasks": 74,
+        "recorded": 74,
+        "successful": 74,
+        "correct": 54,
+        "accuracy": 0.7297297297297297
+      },
+      "score": {
+        "tasks": 18,
+        "recorded": 18,
+        "successful": 18,
+        "correct": 13,
+        "accuracy": 0.7222222222222222
+      }
+    },
+    "probability_valid_n": 231,
+    "brier": 0.35889714488747304,
+    "ece10": 0.14050923371491947,
+    "nll": 0.7191767815274726,
+    "first_success_latency_s": 6.249400805681944,
+    "warm_p50_s": 0.05304211936891079,
+    "warm_p95_s": 0.4283552508801221,
+    "mean_input_tokens_per_success": 715.3982683982684,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "nimble-v3:9b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "full",
+    "tasks": 231,
+    "recorded": 231,
+    "successful": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 202,
+    "accuracy": 0.8744588744588745,
+    "ci_wilson_95": [
+      0.8255168640609313,
+      0.9111503363080152
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "recorded": 139,
+        "successful": 139,
+        "correct": 125,
+        "accuracy": 0.8992805755395683
+      },
+      "noul": {
+        "tasks": 74,
+        "recorded": 74,
+        "successful": 74,
+        "correct": 63,
+        "accuracy": 0.8513513513513513
+      },
+      "score": {
+        "tasks": 18,
+        "recorded": 18,
+        "successful": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    },
+    "probability_valid_n": 231,
+    "brier": 0.18359115045978197,
+    "ece10": 0.0595208435182836,
+    "nll": 0.37700271947272024,
+    "first_success_latency_s": 7.066996078938246,
+    "warm_p50_s": 0.08712152019143105,
+    "warm_p95_s": 0.752574823796749,
+    "mean_input_tokens_per_success": 775.6926406926407,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "clef-flash:9b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "full",
+    "tasks": 231,
+    "recorded": 231,
+    "successful": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 190,
+    "accuracy": 0.8225108225108225,
+    "ci_wilson_95": [
+      0.7680841589355034,
+      0.8663864356019131
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "recorded": 139,
+        "successful": 139,
+        "correct": 117,
+        "accuracy": 0.841726618705036
+      },
+      "noul": {
+        "tasks": 74,
+        "recorded": 74,
+        "successful": 74,
+        "correct": 59,
+        "accuracy": 0.7972972972972973
+      },
+      "score": {
+        "tasks": 18,
+        "recorded": 18,
+        "successful": 18,
+        "correct": 14,
+        "accuracy": 0.7777777777777778
+      }
+    },
+    "probability_valid_n": 231,
+    "brier": 0.23539986465575585,
+    "ece10": 0.0609654704573237,
+    "nll": 0.4213023716981188,
+    "first_success_latency_s": 10.062323942780495,
+    "warm_p50_s": 0.07118458859622478,
+    "warm_p95_s": 0.5739744571968913,
+    "mean_input_tokens_per_success": 721.3376623376623,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "clef:27b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "full",
+    "tasks": 231,
+    "recorded": 231,
+    "successful": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 203,
+    "accuracy": 0.8787878787878788,
+    "ci_wilson_95": [
+      0.8303921928936235,
+      0.9147913912946171
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "recorded": 139,
+        "successful": 139,
+        "correct": 122,
+        "accuracy": 0.8776978417266187
+      },
+      "noul": {
+        "tasks": 74,
+        "recorded": 74,
+        "successful": 74,
+        "correct": 66,
+        "accuracy": 0.8918918918918919
+      },
+      "score": {
+        "tasks": 18,
+        "recorded": 18,
+        "successful": 18,
+        "correct": 15,
+        "accuracy": 0.8333333333333334
+      }
+    },
+    "probability_valid_n": 231,
+    "brier": 0.16755347019038738,
+    "ece10": 0.052166301996778706,
+    "nll": 0.3100403156213372,
+    "first_success_latency_s": 9.711932200938463,
+    "warm_p50_s": 0.2660115659236908,
+    "warm_p95_s": 2.4416090158745645,
+    "mean_input_tokens_per_success": 721.3376623376623,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "pplx-decider:latest",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "full",
+    "tasks": 231,
+    "recorded": 231,
+    "successful": 231,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 205,
+    "accuracy": 0.8874458874458875,
+    "ci_wilson_95": [
+      0.8401928543788795,
+      0.9220234974479498
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 139,
+        "recorded": 139,
+        "successful": 139,
+        "correct": 124,
+        "accuracy": 0.8920863309352518
+      },
+      "noul": {
+        "tasks": 74,
+        "recorded": 74,
+        "successful": 74,
+        "correct": 66,
+        "accuracy": 0.8918918918918919
+      },
+      "score": {
+        "tasks": 18,
+        "recorded": 18,
+        "successful": 18,
+        "correct": 15,
+        "accuracy": 0.8333333333333334
+      }
+    },
+    "probability_valid_n": 231,
+    "brier": 0.15471573934586866,
+    "ece10": 0.0476100282286582,
+    "nll": 0.2768516796864938,
+    "first_success_latency_s": 22.516317524015903,
+    "warm_p50_s": 2.8301908150315285,
+    "warm_p95_s": 18.581237412989136,
+    "mean_input_tokens_per_success": 671.6233766233767,
+    "mean_output_tokens_per_success": 0
+  }
+]

@@ -1,0 +1,290 @@
+[
+  {
+    "model": "tev1:0.8b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "smoke",
+    "tasks": 1,
+    "recorded": 1,
+    "successful": 1,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 1,
+    "accuracy": 1.0,
+    "ci_wilson_95": [
+      0.20654931437723745,
+      1
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "noul": {
+        "tasks": 1,
+        "recorded": 1,
+        "successful": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "score": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "probability_valid_n": 1,
+    "brier": 0.025274171832078526,
+    "ece10": 0.11241479402658383,
+    "nll": 0.11925075551030763,
+    "first_success_latency_s": 5.496473271399736,
+    "warm_p50_s": null,
+    "warm_p95_s": null,
+    "mean_input_tokens_per_success": 165,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "tev1:4b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "smoke",
+    "tasks": 1,
+    "recorded": 1,
+    "successful": 1,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 1,
+    "accuracy": 1.0,
+    "ci_wilson_95": [
+      0.20654931437723745,
+      1
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "noul": {
+        "tasks": 1,
+        "recorded": 1,
+        "successful": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "score": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "probability_valid_n": 1,
+    "brier": 0.0009642895865955854,
+    "ece10": 0.021957795729485086,
+    "nll": 0.022202456227578476,
+    "first_success_latency_s": 5.887930318713188,
+    "warm_p50_s": null,
+    "warm_p95_s": null,
+    "mean_input_tokens_per_success": 165,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "nimble-v3:9b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "smoke",
+    "tasks": 1,
+    "recorded": 1,
+    "successful": 1,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 1,
+    "accuracy": 1.0,
+    "ci_wilson_95": [
+      0.20654931437723745,
+      1
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "noul": {
+        "tasks": 1,
+        "recorded": 1,
+        "successful": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "score": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "probability_valid_n": 1,
+    "brier": 8.784263470484454e-08,
+    "ece10": 0.00020957413330946473,
+    "nll": 0.00020959609703688064,
+    "first_success_latency_s": 6.578364100307226,
+    "warm_p50_s": null,
+    "warm_p95_s": null,
+    "mean_input_tokens_per_success": 220,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "clef-flash:9b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "smoke",
+    "tasks": 1,
+    "recorded": 1,
+    "successful": 0,
+    "invalid": 0,
+    "errors": 1,
+    "correct": 0,
+    "accuracy": 0.0,
+    "ci_wilson_95": [
+      0,
+      0.7934506856227626
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "noul": {
+        "tasks": 1,
+        "recorded": 1,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": 0.0
+      },
+      "score": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "probability_valid_n": 0,
+    "brier": null,
+    "ece10": null,
+    "nll": null,
+    "first_success_latency_s": null,
+    "warm_p50_s": null,
+    "warm_p95_s": null,
+    "mean_input_tokens_per_success": null,
+    "mean_output_tokens_per_success": null
+  },
+  {
+    "model": "clef:27b",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "smoke",
+    "tasks": 1,
+    "recorded": 1,
+    "successful": 1,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 1,
+    "accuracy": 1.0,
+    "ci_wilson_95": [
+      0.20654931437723745,
+      1
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "noul": {
+        "tasks": 1,
+        "recorded": 1,
+        "successful": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "score": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "probability_valid_n": 1,
+    "brier": 0.001185072710643017,
+    "ece10": 0.024342069659778476,
+    "nll": 0.024643235210727314,
+    "first_success_latency_s": 12.804245200008154,
+    "warm_p50_s": null,
+    "warm_p95_s": null,
+    "mean_input_tokens_per_success": 186,
+    "mean_output_tokens_per_success": 0
+  },
+  {
+    "model": "pplx-decider:latest",
+    "protocol": "e3-native-systemone-v1",
+    "mode": "smoke",
+    "tasks": 1,
+    "recorded": 1,
+    "successful": 1,
+    "invalid": 0,
+    "errors": 0,
+    "correct": 1,
+    "accuracy": 1.0,
+    "ci_wilson_95": [
+      0.20654931437723745,
+      1
+    ],
+    "by_type": {
+      "choice": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      },
+      "noul": {
+        "tasks": 1,
+        "recorded": 1,
+        "successful": 1,
+        "correct": 1,
+        "accuracy": 1.0
+      },
+      "score": {
+        "tasks": 0,
+        "recorded": 0,
+        "successful": 0,
+        "correct": 0,
+        "accuracy": null
+      }
+    },
+    "probability_valid_n": 1,
+    "brier": 0.0004060570380714898,
+    "ece10": 0.014248807635579341,
+    "nll": 0.014351296623893756,
+    "first_success_latency_s": 12.128297854214907,
+    "warm_p50_s": null,
+    "warm_p95_s": null,
+    "mean_input_tokens_per_success": 143,
+    "mean_output_tokens_per_success": 0
+  }
+]

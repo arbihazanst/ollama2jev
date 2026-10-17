@@ -86,16 +86,10 @@ def load_tasks(dataset_dir, smoke=False):
             raise ValueError("Choice requires two or more options")
         if q["type"] == "score" and not (2 <= len(q["criteria"]) <= 10):
             raise ValueError("Score requires 2--10 levels")
-    if not smoke:
-        return rows
-    sample, picked = [], Counter()
-    for row in rows:
-        typ = row["question"]["type"]
-        if picked[typ] < 5:
-            sample.append(row)
-            picked[typ] += 1
-    assert len(sample) == 15
-    return sample
+    if smoke:
+        return rows[:1]
+
+    return rows
 
 
 def request_body(task, model, keep_alive):
@@ -250,7 +244,10 @@ def aggregate_model(model, tasks, result_root, smoke):
         by_type[typ] = {"tasks": denom, "recorded": len(typ_rows),
                         "successful": sum(r["status"] == "ok" for r in typ_rows),
                         "correct": sum(bool(r.get("correct")) for r in typ_rows),
-                        "accuracy": sum(bool(r.get("correct")) for r in typ_rows) / denom}
+                        "accuracy": (
+                            sum(bool(r.get("correct")) for r in typ_rows) / denom
+                            if denom > 0 else None
+                        )}
     latencies = [r["latency_s"] for r in valid]
     warm = latencies[1:]
     result = {"model": model, "protocol": PROTOCOL, "mode": "smoke" if smoke else "full",
