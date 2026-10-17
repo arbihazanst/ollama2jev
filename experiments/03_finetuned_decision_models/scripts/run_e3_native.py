@@ -86,16 +86,10 @@ def load_tasks(dataset_dir, smoke=False):
             raise ValueError("Choice requires two or more options")
         if q["type"] == "score" and not (2 <= len(q["criteria"]) <= 10):
             raise ValueError("Score requires 2--10 levels")
-    if not smoke:
-        return rows
-    sample, picked = [], Counter()
-    for row in rows:
-        typ = row["question"]["type"]
-        if picked[typ] < 5:
-            sample.append(row)
-            picked[typ] += 1
-    assert len(sample) == 15
-    return sample
+    if smoke:
+        return rows[:1]
+
+    return rows
 
 
 def request_body(task, model, keep_alive):
