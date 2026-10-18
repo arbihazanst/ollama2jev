@@ -1,5 +1,58 @@
 [
   {
+    "source_jsonl": "e4_gemma4-e2b_full_r3.jsonl",
+    "status": "complete",
+    "distinct_tasks": 231,
+    "repetitions": 3,
+    "recorded_model_task_repetitions": 693,
+    "expected_model_task_repetitions": 693,
+    "first_repetition_rows": 231,
+    "config_sha256": "ba70cb04e6fc89afc1d0d428cf64506035e7c7734f6055979cc5f730c86f0be1",
+    "only_ollama": false,
+    "ollama_status": {
+      "ok": 693,
+      "coverage_failure": 0,
+      "error": 0
+    },
+    "transformers_status": {
+      "ok": 693,
+      "coverage_failure": 0,
+      "error": 0
+    },
+    "ollama_first_run_quality": {
+      "n": 231,
+      "correct": 146,
+      "accuracy_full": 0.6320346320346321,
+      "brier_valid": 0.6103846707892076,
+      "nll_valid": 1.5691629692678934,
+      "ece10_valid": 0.24027610257607707
+    },
+    "hf_first_run_quality": {
+      "n": 231,
+      "correct": 149,
+      "accuracy_full": 0.645021645021645,
+      "brier_valid": 0.5909038447398859,
+      "nll_valid": 1.639722785343196,
+      "ece10_valid": 0.21966368495974176
+    },
+    "paired_type_decisions": 693,
+    "paired_binary_candidates": 2547,
+    "binary_probability_mae": 0.0991491031882837,
+    "binary_probability_rmse": 0.2643161150147354,
+    "binary_probability_max_abs_error": 0.9999998314334387,
+    "binary_probability_pearson": 0.7377894086004004,
+    "typed_prediction_agreement": 0.8484848484848485,
+    "prompt_token_count_match_rate": 1,
+    "ollama_request_mean_s": 0.2509369929180001,
+    "ollama_request_p50_s": 0.22708682343363762,
+    "ollama_request_p95_s": 0.556383855640888,
+    "hf_request_mean_s": 0.6244667761705138,
+    "hf_request_p50_s": 0.47540316358208656,
+    "hf_request_p95_s": 1.7401436656713476,
+    "paired_latencies_ratio_ollama_over_hf_mean": 0.46568524784708215,
+    "limitations": "These are cross-stack measurements unless weights, tokenizer IDs and rendered chat-template tokens are independently verified identical. HF full-logit reference can use different quantization from Ollama GGUF. Warmup/model loading excluded; CPU/GPU contention may affect timing."
+  },
+  {
     "source_jsonl": "e4_gemma4-e4b_full_r3.jsonl",
     "status": "complete",
     "distinct_tasks": 231,
@@ -103,6 +156,112 @@
     "hf_request_p50_s": 0.2941204085946083,
     "hf_request_p95_s": 1.345349634438753,
     "paired_latencies_ratio_ollama_over_hf_mean": 0.5447396204265594,
+    "limitations": "These are cross-stack measurements unless weights, tokenizer IDs and rendered chat-template tokens are independently verified identical. HF full-logit reference can use different quantization from Ollama GGUF. Warmup/model loading excluded; CPU/GPU contention may affect timing."
+  },
+  {
+    "source_jsonl": "e4_granite4.2-8b_full_r3.jsonl",
+    "status": "complete",
+    "distinct_tasks": 231,
+    "repetitions": 3,
+    "recorded_model_task_repetitions": 693,
+    "expected_model_task_repetitions": 693,
+    "first_repetition_rows": 231,
+    "config_sha256": "e3427e82d99c58cb36664c28f86730ff92803ad77522ca8f4dcd39bd98e667eb",
+    "only_ollama": false,
+    "ollama_status": {
+      "ok": 687,
+      "coverage_failure": 6,
+      "error": 0
+    },
+    "transformers_status": {
+      "ok": 693,
+      "coverage_failure": 0,
+      "error": 0
+    },
+    "ollama_first_run_quality": {
+      "n": 228,
+      "correct": 147,
+      "accuracy_full": 0.6363636363636364,
+      "brier_valid": 0.5573851042069985,
+      "nll_valid": 1.1691644806234662,
+      "ece10_valid": 0.22280100496529415
+    },
+    "hf_first_run_quality": {
+      "n": 231,
+      "correct": 154,
+      "accuracy_full": 0.6666666666666666,
+      "brier_valid": 0.5362643131985054,
+      "nll_valid": 1.2668199626400978,
+      "ece10_valid": 0.22908598461281704
+    },
+    "paired_type_decisions": 687,
+    "paired_binary_candidates": 2517,
+    "binary_probability_mae": 0.04188222548865191,
+    "binary_probability_rmse": 0.1285925082408451,
+    "binary_probability_max_abs_error": 0.9287550054028468,
+    "binary_probability_pearson": 0.9198885726588079,
+    "typed_prediction_agreement": 0.9053857350800583,
+    "prompt_token_count_match_rate": 1,
+    "ollama_request_mean_s": 0.24434633483077242,
+    "ollama_request_p50_s": 0.18206686526536942,
+    "ollama_request_p95_s": 0.8639487624168393,
+    "hf_request_mean_s": 0.6763444407473481,
+    "hf_request_p50_s": 0.3659278191626072,
+    "hf_request_p95_s": 2.578004825860262,
+    "paired_latencies_ratio_ollama_over_hf_mean": 0.4948834627550984,
+    "limitations": "These are cross-stack measurements unless weights, tokenizer IDs and rendered chat-template tokens are independently verified identical. HF full-logit reference can use different quantization from Ollama GGUF. Warmup/model loading excluded; CPU/GPU contention may affect timing."
+  },
+  {
+    "source_jsonl": "e4_llama3.2-1b_full_r3.jsonl",
+    "status": "complete",
+    "distinct_tasks": 231,
+    "repetitions": 3,
+    "recorded_model_task_repetitions": 693,
+    "expected_model_task_repetitions": 693,
+    "first_repetition_rows": 231,
+    "config_sha256": "aed0a972ff4a70fed564974f92a2f6bb839c315ea375f0cf3ae7bc156a043244",
+    "only_ollama": false,
+    "ollama_status": {
+      "ok": 693,
+      "coverage_failure": 0,
+      "error": 0
+    },
+    "transformers_status": {
+      "ok": 693,
+      "coverage_failure": 0,
+      "error": 0
+    },
+    "ollama_first_run_quality": {
+      "n": 231,
+      "correct": 92,
+      "accuracy_full": 0.39826839826839827,
+      "brier_valid": 0.677242723721725,
+      "nll_valid": 1.2138393359260091,
+      "ece10_valid": 0.054783000579281954
+    },
+    "hf_first_run_quality": {
+      "n": 231,
+      "correct": 86,
+      "accuracy_full": 0.3722943722943723,
+      "brier_valid": 0.6738294974382237,
+      "nll_valid": 1.2072064972568932,
+      "ece10_valid": 0.02429216548292904
+    },
+    "paired_type_decisions": 693,
+    "paired_binary_candidates": 2547,
+    "binary_probability_mae": 0.10105891978325071,
+    "binary_probability_rmse": 0.12332547911041003,
+    "binary_probability_max_abs_error": 0.45217465439707727,
+    "binary_probability_pearson": 0.9000589363846688,
+    "typed_prediction_agreement": 0.7546897546897547,
+    "prompt_token_count_match_rate": 0,
+    "ollama_request_mean_s": 0.10565554694115341,
+    "ollama_request_p50_s": 0.09858372062444687,
+    "ollama_request_p95_s": 0.22424774467945086,
+    "hf_request_mean_s": 0.18025278247366047,
+    "hf_request_p50_s": 0.14233393594622612,
+    "hf_request_p95_s": 0.5106467850506303,
+    "paired_latencies_ratio_ollama_over_hf_mean": 0.6731297658096372,
     "limitations": "These are cross-stack measurements unless weights, tokenizer IDs and rendered chat-template tokens are independently verified identical. HF full-logit reference can use different quantization from Ollama GGUF. Warmup/model loading excluded; CPU/GPU contention may affect timing."
   },
   {
