@@ -1,54 +1,52 @@
-# E2 — Zero-shot baseline and scoring ablations
+# E2 — Zero-shot baselines and scoring ablations
 
-## Status
+**Status: COMPLETE (verified 2026-10-18).** All Z0–Z4 variants have committed outputs. There are **11 model configurations × 231 public JevBench tasks = 2,541 model–task attempts** per variant. Z1 is the archived E1 method; Z2–Z4 use its stored diagnostics.
 
-- **Z0 (direct zero-shot output generation): PLANNED; no results yet.**
-- **Z1 (full Ollama2Jev): COMPLETE.** Reconstructed from the 11 model-specific JevBench JSONL results.
-- **Z2 (yes-only unconditional likelihood): COMPLETE, offline replay.**
-- **Z3 (hard-thresholded binary scores): COMPLETE, offline replay.**
-- **Z4 (effective top-k sensitivity): COMPLETE, offline rank-truncation replay.**
+## Variants and verified results
 
-The saved first-token yes/no log-probabilities and ranks permit Z2–Z4 offline analysis; no additional model calls are required. See `scripts/reproduce_z2_z4_ablation.py` and `results/`.
+| Variant | Method | Correct / 2,541 | Accuracy | Execution |
+|---|---|---:|---:|---|
+| Z0 | Direct zero-shot final-label generation | **1,722** | **67.77%** | New Ollama inference |
+| Z1 | Conditional `yes`/`no` probability, original typed assembler | 1,648 | 64.86% | Original E1 run |
+| Z2 | Yes-only likelihood, same typed assembler | 1,643 | 64.66% | Offline replay |
+| Z3 | Hard score `1[p_yes >= 0.5]`, same typed assembler | 1,388 | 54.62% | Offline replay |
 
-## Variant definitions
+Z0 generated **2,513 valid responses**, **28 invalid responses**, and **zero transport errors**. Unlike Z1–Z3, Z0 does not yield class probability distributions without a separate probabilistic extraction procedure; do not report Brier/NLL/ECE for it as if measured.
 
-**Z0 — not yet executed:** Ask each general-purpose model for the final allowed label or integer directly with the same JevBench state, instructions, and options. Use no demonstrations, temperature=0, no thinking if supported, and sufficient `num_predict` for a complete answer. Record the exact prompt renderer, extraction policy, invalid-output rate, time, and model digests. Do not pretend that generated labels provide probability distributions: Brier/ECE/NLL are not available without an additional defensible probabilistic extraction procedure.
+### Z4 — Effective top-k rank-truncation replay
 
-**Z1 — full:** For candidate *i*, `q_i = exp(logp_yes_i)/(exp(logp_yes_i)+exp(logp_no_i))`; use the original typed assembler.
-
-**Z2 — yes-only:** Replace `q_i` with `s_i = exp(logp_yes_i)`; keep the same L1 normalization for multi-candidate questions and Noul rules. This removes *binary yes/no renormalization* but **not** the typed assembler's L1 normalization.
-
-**Z3 — hard:** Replace `q_i` with `1[q_i >= 0.5]`; keep the assembler, including uniform zero-sum fallback and deterministic tie rules. Interpret probability-quality metrics cautiously: this variant intentionally destroys continuous information.
-
-**Z4 — top-k replay:** At effective k in `{2,5,10,20}`, a binary candidate counts as covered iff **both** saved verbalizer ranks are at most k. A typed decision counts as complete iff all its candidates are covered. For covered tasks, use the original Z1 decision. Incomplete decisions count as incorrect for strict accuracy. **This is not a new Ollama inference timing experiment.**
-
-## Primary result (pooled 11 models)
-
-| Variant | Correct / 2,541 attempts | Accuracy | Mean Brier among 2,538 completed decisions |
+| Effective k | Binary candidates covered / 9,327 | Typed decisions complete / 2,541 | Strict correct / 2,541 |
 |---|---:|---:|---:|
-| Z1 | 1,648 | 0.6486 | 0.4794 |
-| Z2 | 1,643 | 0.6466 | 0.4817 |
-| Z3 | 1,388 | 0.5462 | 0.5342 |
+| 2 | 7,989 | 1,985 | 1,208 (47.54%) |
+| 5 | 9,106 | 2,421 | 1,552 (61.08%) |
+| 10 | 9,292 | 2,518 | 1,632 (64.23%) |
+| 20 | 9,324 | 2,538 | 1,648 (64.86%) |
 
-| Effective k | Typed decisions completed | Candidate checks covered | Strict accuracy |
-|---|---:|---:|---:|
-| 2 | 1,985/2,541 | 7,989/9,327 | 0.4754 |
-| 5 | 2,421/2,541 | 9,106/9,327 | 0.6108 |
-| 10 | 2,518/2,541 | 9,292/9,327 | 0.6423 |
-| 20 | 2,538/2,541 | 9,324/9,327 | 0.6486 |
+**Z4 is post-hoc replay of stored top-20 ranks**, not new inference with a smaller API top-k value; it cannot establish runtime improvements.
 
-### Interpretation boundaries
+## Interpretation
 
-Z2 causes a small net decrease (5 correct decisions) and does not establish that conditional yes/no renormalization is consistently superior. Z3 reduces correct decisions by 260, indicating that candidate probability magnitudes matter for the typed assembly. Z4 demonstrates a coverage/accuracy trade-off under an **offline** truncation assumption; it does not measure latency differences from changing the actual top-k API parameter.
+The original Z1 scoring method is **not uniformly better than Z0**. The paired exact McNemar tests with Holm correction across 11 models found significantly higher Z0 accuracy for Qwen3.5 4B, Qwen3.5 9B, and Gemma 4 E4B (adjusted p < 0.05). Z1 scored numerically higher than Z0 for Qwen3.8 27B, but the Holm-adjusted p-value did not reach 0.05. Z2 changes relatively few correct predictions while Z3 substantially reduces accuracy.
 
-## Reproduction
+Z2 substitutes `exp(logp_yes)` for conditional `p_yes` while retaining the original typed assembler's L1 normalization. Z3 hard-thresholds binary candidates before the same assembly; zero-sum and tie handling still follow the assembler.
 
-From repository root:
+## Authoritative results
+
+- [Z0 raw records and model summary](results/z0_raw/)
+- [Z0 vs Z1 paired comparison](results/comparisons/z0_z1_paired_comparison.csv)
+- [Z1–Z3 offline summary](results/ablations/z1_z3_precomputed_summary.csv)
+- [Z4 pooled coverage and accuracy](results/ablations/z4_topk_pooled_summary.csv)
+- [Archived E1 results](../01_general_llm_benchmark/results/raw/)
+
+## Reproduce offline analysis
+
+From repository root (public dataset in `../jevbench/datasets/public/`):
 
 ```bash
 python experiments/02_zero_shot_ablation/scripts/reproduce_z2_z4_ablation.py \
-  --results-dir . --dataset-dir ../jevbench/datasets/public \
+  --results-dir experiments/01_general_llm_benchmark/results/raw \
+  --dataset-dir ../jevbench/datasets/public \
   --out-dir experiments/02_zero_shot_ablation/results/recomputed
 ```
 
-The committed `results/z1_z3_precomputed_summary.csv` and `results/z4_topk_pooled_summary.csv` are compact checked summaries from the initial offline analysis. The script writes a more detailed set of results under `results/recomputed/` for verification. See `manuscript/ablation_atomic_revision.md` for LaTeX insertion and wording.
+The prior [ablation manuscript notes](manuscript/ablation_atomic_revision.md) predate completion of Z0 and should not supersede the committed final results.

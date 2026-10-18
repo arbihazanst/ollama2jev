@@ -1,36 +1,49 @@
-# Ollama2Jev evaluation experiments
+# Ollama2Jev — Experimental evaluation
 
-This directory separates **completed measurements**, **offline re-analysis**, and **proposed (not executed)** evaluations. The original 11-model raw JevBench JSONL files stay at the repository root to preserve existing links and provenance; do not duplicate or overwrite them here.
+**Status: E1–E4 COMPLETE (verified 2026-10-18).** All four experimental phases have committed raw results, summaries and analysis scripts on branch `ollama2jev`.
 
-| ID | Experiment | Status | Evidence |
+| Phase | Scope | Final status | Primary evidence |
 |---|---|---|---|
-| E1 | General-purpose LLM benchmark (11 Ollama configurations × 231 decisions) | **COMPLETED** | Root `ollama2jev_jevbench_*_full.jsonl` and `ollama2jev_jevbench_11models_summary.json` |
-| E2 Z0 | Direct zero-shot label-generation baseline | **PLANNED — NOT RUN** | Protocol in `02_zero_shot_ablation/README.md` |
-| E2 Z1 | Full Ollama2Jev scoring (original method) | **COMPLETED** | Reconstructed from E1 raw outputs |
-| E2 Z2–Z3 | Yes-only and hard-score offline ablations | **COMPLETED (OFFLINE)** | `02_zero_shot_ablation/results/` and replay script |
-| E2 Z4 | Effective top-k = 2, 5, 10, 20 coverage replay | **COMPLETED (OFFLINE)** | `02_zero_shot_ablation/results/` and replay script |
-| E3 | Native fine-tuned decision-model comparison | **PLANNED — NOT RUN** | `03_finetuned_decision_models/README.md` |
-| E4 | Controlled exact-logit fidelity / scalability evaluation | **PLANNED — NOT RUN** | `04_backend_fidelity/README.md` |
+| **E1** | 11 general-purpose Ollama models × 231 public JevBench tasks | **COMPLETE** | [11-model summary](01_general_llm_benchmark/results/summary/ollama2jev_jevbench_11models_summary.json) |
+| **E2** | 11-model direct zero-shot Z0 plus Z1–Z4 scoring ablations | **COMPLETE** | [Z0 summary](02_zero_shot_ablation/results/z0_raw/z0_model_summary.json), [offline ablations](02_zero_shot_ablation/results/ablations/), [paired tests](02_zero_shot_ablation/results/comparisons/) |
+| **E3** | 6 native System-One models × 231 tasks and six paired comparisons | **COMPLETE** | [Six-model summary](03_finetuned_decision_models/results/summary/e3_model_summary.json), [paired results](03_finetuned_decision_models/results/comparisons/) |
+| **E4A** | Archived E1 conditional-probability reconstruction for 9,327 binary attempts | **COMPLETE** | [E4A log-probability audit](04_backend_fidelity/results/offline/e4a_e1_logprob_audit.json) |
+| **E4B** | 4 Qwen-family models × 231 tasks × 3 paired repetitions | **COMPLETE** | [Cross-backend summary](04_backend_fidelity/results/paired/summary/e4_cross_stack_summary.json) |
 
-## Reproduce completed offline ablations
+## Verified totals
 
-From the **repository root**, with the original JevBench public data available in the sibling directory `../jevbench/datasets/public/`:
+- **E1:** 2,541 attempted model–task decisions; 2,538 successful typed results and 3 Granite 4.2 8B coverage failures; 1,648 correct.
+- **E2 Z0:** 2,541 completed direct-generation attempts; 2,513 valid and 28 invalid labels; 1,722 correct. **Z1:** 1,648 correct; **Z2:** 1,643; **Z3:** 1,388. Z4 top-20 coverage is 9,324/9,327 candidates.
+- **E3:** 1,386/1,386 unique model–task pairs have valid final results after recorded retries. Nimble v3 9B and Clef Flash 9B are Holm-significantly better than their paired E1 baselines.
+- **E4B:** 2,772/2,772 paired typed task/repetition measurements, **10,188 paired binary candidates**, zero backend failures; all four 231-task model sets have three repetitions. The Transformers 27B checkpoint was sharded across three visible GPUs.
+
+## How to reproduce analyses
+
+Run from the repository root with the public JevBench dataset in the sibling directory `../jevbench/datasets/public/`:
 
 ```bash
+# E2: recompute Z1–Z4 offline from archived E1 raw files.
 python experiments/02_zero_shot_ablation/scripts/reproduce_z2_z4_ablation.py \
-  --results-dir . \
+  --results-dir experiments/01_general_llm_benchmark/results/raw \
   --dataset-dir ../jevbench/datasets/public \
   --out-dir experiments/02_zero_shot_ablation/results/recomputed
+
+# E3: verify final native-model summaries and paired contrasts.
+python experiments/03_finetuned_decision_models/scripts/run_e3_native.py --summary-only
+python experiments/03_finetuned_decision_models/scripts/compare_e3_to_e1.py
+
+# E4: verify numerical reconstruction and regenerate paired comparison summaries.
+python experiments/04_backend_fidelity/scripts/audit_e1_logits.py
+python experiments/04_backend_fidelity/scripts/summarize_e4.py
 ```
 
-The command reads the original 11 JSONL artifacts, requires 231 matching JevBench item IDs, and checks that replayed Z1 correctness matches recorded outputs. It does not contact Ollama or fine-tune models. Output includes model metrics, paired McNemar counts, top-k coverage, and a JSON summary.
+## Research-integrity and provenance notes
 
-## Research-integrity rules
+- **E1 and E4 are different inference runs**; do not replace E1 model scores with E4 first-repetition results. `qwen3.8:latest` was 197/231 correct in E1 and 200/231 in E4.
+- **Z0 does not produce probability distributions**, while Z1–Z3 use probabilistic typed assembly. Comparisons should distinguish accuracy from calibration metrics.
+- **Z4 is offline top-k rank truncation**, not evidence of runtime speedup at altered Ollama top-k settings.
+- **E3 compares deployed systems**, not the isolated effect of fine-tuning. Different model formats and inference paths prevent causal attribution.
+- **E4 is cross-stack agreement, not exact same-weight logit equivalence**, because HF model checkpoints and Ollama GGUF representations may differ. Prompt-token *count* parity does not prove token ID parity. Accuracy uses one observation per task (first repetition) and repeats are retained for stability and latency, not inflated sample size.
+- Preserve model digests, checkpoint metadata, seeds, versions, GPU allocations, dataset fingerprints and underlying raw outputs.
 
-- Never describe Z0, E3, or E4 as completed until their outputs are committed and checked.
-- Z4 is a **post-hoc rank-truncation replay** using saved top-20 diagnostics, not a new `top_logprobs=k` inference run and not evidence of speedups.
-- Z3 hard-thresholding creates ties and point masses; NLL results depend on clipping and should not be used as primary calibration claims.
-- A **full 231-task denominator per model** counts coverage failures as incorrect. Probability metrics only use completed distributions (2,538 across all models).
-- Record exact model digests, quantization, software versions, source commits, hardware, and random seeds (when applicable) for future experiments.
-
-See each experiment README for task protocol, metrics, and comparability caveats.
+Read the individual [E1](01_general_llm_benchmark/README.md), [E2](02_zero_shot_ablation/README.md), [E3](03_finetuned_decision_models/README.md) and [E4](04_backend_fidelity/README.md) reports for methods, exact artifacts and limitations.

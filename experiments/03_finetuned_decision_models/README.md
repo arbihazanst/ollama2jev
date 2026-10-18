@@ -1,88 +1,48 @@
 # E3 — Fine-tuned System-One decision models
 
-**Status: protocol and scripts ready; no E3 benchmark outcomes reported until the server run completes.**
+**Status: COMPLETE (verified 2026-10-18).** Six native decision models were evaluated through Ollama's `/v1/systemone` interface, each on **231 public JevBench tasks**, with predeclared paired comparisons against general-purpose E1 models.
 
-## Goal
+## Final benchmark
 
-Compare native decision-model inference using Ollama's `/v1/systemone` endpoint with the original general-purpose Qwen checkpoints scored using Ollama2Jev in E1.
+| Native model | E1 comparator | Correct / 231 | Accuracy | Delta vs E1 (pp) | Holm-adjusted p |
+|---|---|---:|---:|---:|---:|
+| `tev1:0.8b` | `qwen3.5:0.8b` | 140 | 60.61% | +8.66 | 0.0821 |
+| `tev1:4b` | `qwen3.5:4b` | 175 | 75.76% | +4.76 | 0.2346 |
+| `nimble-v3:9b` | `qwen3.5:9b` | 202 | 87.45% | +15.15 | **0.00000217** |
+| `clef-flash:9b` | `qwen3.5:9b` | 190 | 82.25% | +9.96 | **0.00544** |
+| `clef:27b` | `qwen3.8:latest` | 203 | 87.88% | +2.60 | 0.2379 |
+| `pplx-decider:latest` | `qwen3.8:latest` | 205 | 88.74% | +3.46 | 0.2304 |
 
-| Native decision model | E1 comparison model |
-| --- | --- |
-| `tev1:0.8b` | `qwen3.5:0.8b` |
-| `tev1:4b` | `qwen3.5:4b` |
-| `nimble-v3:9b` | `qwen3.5:9b` |
-| `clef-flash:9b` | `qwen3.5:9b` |
-| `clef:27b` | `qwen3.8:latest` |
-| `pplx-decider:latest` | `qwen3.8:latest` |
+All **1,386 unique model–task evaluations** have valid successful final outcomes, with **zero final invalid responses or errors**. The `tev1:4b` raw JSONL includes 12 earlier failed attempts later retried successfully: the **latest row per task** is authoritative, rather than counting retries as new independent observations.
 
-## Reproducibility details
+After Holm correction across six planned pairs, Nimble v3 9B and Clef Flash 9B have statistically significant positive differences versus their E1 comparators. The other numerical improvements should not be presented as Holm-significant.
 
-- Public JevBench `original.jsonl` → `easy.jsonl` → `hard.jsonl` (exactly 231 tasks: 139 Choice, 74 Noul, 18 Score).
-- One named `decision` question per HTTP request, preserving original `state`, `type`, `instructions`, `criteria`, and candidate order.
-- Use native model probabilities without forcing temperature, thinking mode, one-token decoding, or logprob arguments: these are not supported for `/v1/systemone`.
-- Choice: native chosen option (validated against probability maximum). Noul: probability of true >= 0.5. Score: **argmax rubric level**, not rounded weighted-mean score, matching E1.
-- Every output includes per-class probabilities; Brier (multiclass squared sum), NLL (log probability of gold), and ECE-10 computed on valid outputs only. Full-denominator accuracy includes invalid responses and HTTP errors as incorrect.
-- Original results belong to E1 and are not duplicated here. E3 includes six per-model JSONL files, a native scoring summary, and six predeclared paired E1 comparisons (Holm correction).
-- Appends one JSONL row after each task; on restart, the latest saved row per task ID is authoritative. No requests are repeated unless `--retry-errors` or `--retry-invalid` is specified.
-- Environment metadata is captured automatically, including Ollama version and installed model digest.
+## Protocol
 
-## Server prerequisites
+The native endpoint receives one named `decision` question per request, preserving state, instructions, criteria, type, and candidate order. Choice uses the native chosen option checked against probabilities; Noul thresholds at 0.5; Score uses **argmax rubric level** rather than rounded expectation. Accuracy includes any invalid/errors in the full denominator, while calibration statistics use valid probability distributions.
 
-`nimble-v3:9b` requires **Ollama >= 0.40.4**. Local `/v1/systemone` is supported in Ollama 0.35+, but individual model version requirements vary. Check `ollama --version` and `ollama list` before running.
+## Artifacts
 
-Pull the exact tags used in the benchmark; the preflight check requires `pplx-decider:latest` to be installed:
+- [Six-model summary](results/summary/e3_model_summary.json)
+- [Raw records](results/raw/)
+- [E3 vs E1 paired results (CSV)](results/comparisons/e3_vs_e1_paired_comparison.csv)
+- [E3 vs E1 paired results (JSON)](results/comparisons/e3_vs_e1_paired_comparison.json)
+- [Native evaluation runner](scripts/run_e3_native.py)
+- [Paired comparison script](scripts/compare_e3_to_e1.py)
 
-```bash
-ollama pull tev1:0.8b
-ollama pull tev1:4b
-ollama pull nimble-v3:9b
-ollama pull clef-flash:9b
-ollama pull clef:27b
-ollama pull pplx-decider:latest
-ollama list
-```
+## Verification / reproduction
 
-This project uses only the native HTTP API through Python's standard library; no SDK changes to the existing Ollama2Jev backend are necessary.
-
-## Smoke test
-
-From the repository root:
+Run from the repository root, with JevBench in `../jevbench/datasets/public/`:
 
 ```bash
-python -u experiments/03_finetuned_decision_models/scripts/run_e3_native.py \
-  --models tev1:0.8b --smoke --stop-on-error --timeout 120
-```
+# Recompute summaries from existing E3 results (no Ollama calls):
+python experiments/03_finetuned_decision_models/scripts/run_e3_native.py --summary-only
 
-The 15-task smoke run is stored under `results/smoke/`, separate from final results.
-
-## Full run in tmux
-
-```bash
-# Run in a new tmux session to protect against SSH disconnects.
-tmux new -s e3
-cd ~/LLM2Jev
-python -u experiments/03_finetuned_decision_models/scripts/run_e3_native.py \
-  --timeout 240 --retries 1 2>&1 | tee experiments/03_finetuned_decision_models/e3_run.log
-```
-
-Detach: `Ctrl+B`, then `D`. Reattach: `tmux attach -t e3`.
-
-If it stops, rerun the same command; completed rows will be skipped. Use `--retry-errors` only after addressing HTTP failures.
-
-Run just one model: `--models clef:27b`.
-
-## Paired comparison, only after ALL six models finish
-
-```bash
+# Recompute six paired comparisons:
 python experiments/03_finetuned_decision_models/scripts/compare_e3_to_e1.py
+
+# Optional: reproduce inference with required model tags installed:
+python -u experiments/03_finetuned_decision_models/scripts/run_e3_native.py --timeout 240 --retries 1
 ```
 
-This checks that all six paired contrasts each contain the exact same 231 task IDs. It outputs `results/comparisons/e3_vs_e1_paired_comparison.csv` and `.json`.
-
-## Limitations
-
-These are *deployed-system* comparisons, **not controlled estimates of the effect of fine-tuning alone**. Parent and native decision models differ in training, format/precision, possibly runtime, and scoring mechanism. The `latest` alias used in the E1 Qwen3.8 baseline should be pinned with its digest.
-
-Prompt formatting is delegated to Ollama's native decision runtime, whereas E1 uses an LLM2Jev binary prompt compiler. This is an intentional systems comparison; it does not isolate prompt effects. JevBench is publicly used by some model publishers, so benchmark exposure must be disclosed. Always cite the publishers and respect their model licenses (Nimble v3 is CC BY-NC 4.0).
-
-Official interface reference: https://docs.ollama.com/api/systemone
+**Limitation:** This is a comparison of deployed inference pipelines, **not a causal estimate of fine-tuning alone**. Model training, checkpoint precision, prompt formatting, runtime, and probability generation differ. The exact inference tag is `pplx-decider:latest` (not `pplx-decider:27b`). Report benchmark exposure risk and model licensing conditions. [Native API documentation](https://docs.ollama.com/api/systemone).
