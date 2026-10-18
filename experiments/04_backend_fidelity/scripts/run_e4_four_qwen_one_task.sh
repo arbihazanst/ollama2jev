@@ -2,8 +2,8 @@
 # Run exactly one identical JevBench task for each of four Qwen models.
 # Run from ~/LLM2Jev after applying enable_e4_one_task_multigpu.py.
 set -euo pipefail
-cd "$(dirname "$0")"
-source .venv/bin/activate
+cd /home/arbi/LLM2Jev
+source /home/arbi/LLM2Jev/.venv/bin/activate
 
 RUNNER=experiments/04_backend_fidelity/scripts/run_e4_paired.py
 LOG_DIR=experiments/04_backend_fidelity/smoke_logs
@@ -31,7 +31,7 @@ run_one() {
 run_one 'qwen3.5:0.8b' "$HOME/hf_models/Qwen3.5-0.8B" '1' 'auto' 'auto' 'qwen35_08b'
 run_one 'qwen3.5:4b'   "$HOME/hf_models/Qwen3.5-4B"   '1' 'auto' 'auto' 'qwen35_4b'
 run_one 'qwen3.5:9b'   "$HOME/hf_models/Qwen3.5-9B"   '1' 'auto' 'auto' 'qwen35_9b'
-run_one 'qwen3.8:27b'  "$HOME/hf_models/Qwen3.8-27B"  '1,2,3' 'balanced' 'bfloat16' 'qwen38_27b'
+run_one 'qwen3.8:latest'  "$HOME/hf_models/Qwen3.8-27B"  '1,2,3' 'balanced' 'bfloat16' 'qwen38_27b'
 
 python experiments/04_backend_fidelity/scripts/summarize_e4.py
 printf '\nAll four one-task E4 smoke tests finished. Review logs in %s\n' "$LOG_DIR"

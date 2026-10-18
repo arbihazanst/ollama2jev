@@ -118,7 +118,12 @@ def append(path,row):
 
 def run(args):
     all_tasks=tasks_from_dataset(args.dataset_dir)
-    tasks,subset=subset_tasks(all_tasks,args.full,args.per_type,args.seed)
+    if args.one_task:
+        if args.full:raise ValueError("--one-task and --full cannot be combined")
+        tasks=[all_tasks[0]]
+        subset="one_"+safe(tasks[0]["id"])
+    else:
+        tasks,subset=subset_tasks(all_tasks,args.full,args.per_type,args.seed)
     dataset_sha=sha_json(all_tasks)
     pair_name=safe(args.ollama_model)
     if args.ollama_only:pair_name+='-ollamaonly'
@@ -154,7 +159,7 @@ def run(args):
         hf_identity['weight_file_sizes']={f.name:f.stat().st_size for f in sorted(args.hf_model.glob('*.safetensors'))}
     fingerprint={'protocol':PROTOCOL,'ollama_model':args.ollama_model,'ollama_digest':digest,
                  'hf_model_path':hf_path,'hf_local_metadata':hf_identity,'hf_dtype':args.hf_dtype,'hf_device':args.device,
-                 'hf_batch_size':1,'dataset_sha256':dataset_sha,'per_type':args.per_type,
+                 'hf_batch_size':1,'hf_device_map_arg':args.device_map,'cuda_visible_devices':os.environ.get('CUDA_VISIBLE_DEVICES'),'dataset_sha256':dataset_sha,'per_type':args.per_type,
                  'full':args.full,'seed':args.seed,'repetitions':args.repetitions,'top_logprobs':20,
                  'think':False,'temperature':0.,'ollama_only':args.ollama_only,'keep_alive':args.keep_alive}
     cfg_hash=sha_json(fingerprint)
@@ -190,7 +195,13 @@ def run(args):
         from llm2jev.backend.transformers.backend import TransformersBackend
         print('[E4] Loading full-logit HF reference; this may take time...',flush=True)
         load_start=time.perf_counter()
-        hf_backend=TransformersBackend(args.hf_model,device=args.device,dtype=args.hf_dtype,batch_size=1,enable_thinking=False)
+        hf_backend=TransformersBackend(args.hf_model,device=args.device,device_map=args.device_map,dtype=args.hf_dtype,batch_size=1,enable_thinking=False)
+        metadata["hf_device_map_actual"] = getattr(hf_backend.model, "hf_device_map", None)
+        if args.device_map:
+            print("[E4] HF layer/device allocation:", metadata["hf_device_map_actual"], flush=True)
+            used = {str(v) for v in (metadata["hf_device_map_actual"] or {}).values()}
+            if any(v in {"cpu", "disk"} for v in used):
+                raise RuntimeError("HF checkpoint has CPU/disk offloading; aborting GPU-only latency test")
         print(f'[E4] HF loaded in {time.perf_counter()-load_start:.1f}s',flush=True)
         metadata['hf_tokenization']={'yes_token_id':hf_backend.yes_token_id,
              'no_token_id':hf_backend.no_token_id,
@@ -261,6 +272,8 @@ def main():
     ap.add_argument('--hf-model',type=Path,help='Local HF model checkpoint directory, required for paired experiment')
     ap.add_argument('--ollama-only',action='store_true',help='Fallback: only Ollama stability/timing, NOT cross-backend fidelity')
     ap.add_argument('--hf-dtype',default='auto',choices=['auto','float16','bfloat16','float32'])
+    ap.add_argument('--device-map',choices=['auto','balanced','balanced_low_0','sequential'],default=None,help='Shard HF model across visible CUDA GPUs')
+    ap.add_argument('--one-task',action='store_true',help='Run the same first JevBench item only (exactly one task)')
     ap.add_argument('--device',default='cuda',help='HF device (e.g. cuda or cpu)')
     ap.add_argument('--host',default='http://127.0.0.1:11434')
     ap.add_argument('--keep-alive',default='10m')

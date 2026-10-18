@@ -19,6 +19,7 @@ class TransformersBackend:
         model_path: str | Path,
         *,
         device: str | None = None,
+        device_map: str | None = None,
         dtype: str = "auto",
         yes_label: str = "yes",
         no_label: str = "no",
@@ -78,13 +79,20 @@ class TransformersBackend:
             except AttributeError as error:
                 raise ValueError(f"unsupported dtype: {dtype}") from error
 
+        # Multi-GPU dispatch: do not call .to() on a sharded model.
+        if device_map:
+            model_kwargs["device_map"] = device_map
         self.model = model_class.from_pretrained(
             self.model_path,
             **model_kwargs,
         )
-        self.model.to(selected_device)
+        if device_map:
+            embedding = self.model.get_input_embeddings()
+            self.device = embedding.weight.device if embedding is not None else next(self.model.parameters()).device
+        else:
+            self.model.to(selected_device)
+            self.device = selected_device
         self.model.eval()
-        self.device = selected_device
 
     def score(
         self,

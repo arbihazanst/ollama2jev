@@ -1,0 +1,70 @@
+{
+  "fingerprint": {
+    "protocol": "e4-cross-stack-v1",
+    "ollama_model": "qwen3.5:9b",
+    "ollama_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "hf_model_path": "/home/arbi/hf_models/Qwen3.5-9B",
+    "hf_local_metadata": {
+      "config.json": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+      "tokenizer_config.json": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8",
+      "model.safetensors.index.json": "26d3539b516be613f39563617cb9d33b3f83d401298125be392c80cefb8f7fe5",
+      "weight_file_sizes": {
+        "model.safetensors-00001-of-00004.safetensors": 5276436216,
+        "model.safetensors-00002-of-00004.safetensors": 5335161512,
+        "model.safetensors-00003-of-00004.safetensors": 5368717440,
+        "model.safetensors-00004-of-00004.safetensors": 3325995712
+      }
+    },
+    "hf_dtype": "auto",
+    "hf_device": "cuda",
+    "hf_batch_size": 1,
+    "hf_device_map_arg": "auto",
+    "cuda_visible_devices": "1",
+    "dataset_sha256": "35f5e96f95d74c0d12c9a09bf36ee1ffa1560a981d5ea994728f7d1a4311ad87",
+    "per_type": 5,
+    "full": false,
+    "seed": 42,
+    "repetitions": 1,
+    "top_logprobs": 20,
+    "think": false,
+    "temperature": 0.0,
+    "ollama_only": false,
+    "keep_alive": "10m"
+  },
+  "config_sha256": "277249a0c8503e11051fe3681b06307ae047f18bf6146cb03d9b7369ecb6a833",
+  "python": "3.10.12",
+  "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+  "ollama_version": "0.40.5",
+  "ollama_python_package": "unknown",
+  "ollama_show": {
+    "template": "{{ .Prompt }}",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "9.7B",
+      "quantization_level": "Q4_K_M"
+    },
+    "model_info": null
+  },
+  "repo_commit": "63dc051c7863c8669fb52a309f3c45727fb7c5d9",
+  "notes": [
+    "Pipelines share LLM2Jev binary candidate prompts and assembler.",
+    "They may NOT share identical quantization, underlying model tensors or rendered chat-template tokens.",
+    "HF uses full-vocabulary prefill logits; Ollama uses one generated token, top-20 logprobs.",
+    "HF batch_size=1; serialized execution order alternates by task and repetition.",
+    "Timing is sequential per typed JevBench decision; model initialization excluded."
+  ],
+  "hf_device_map_actual": null,
+  "hf_tokenization": {
+    "yes_token_id": 9405,
+    "no_token_id": 2083,
+    "yes_decoded": "yes",
+    "no_decoded": "no",
+    "tokenizer_chat_template_sha256": "12de9034d5269e8b1fe6012b3538374fcb3941bf93c95fc81b0cf5acf3f08ce4",
+    "model_config_class": "Qwen3_5TextConfig"
+  }
+}
