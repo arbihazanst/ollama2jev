@@ -1,0 +1,96 @@
+{
+  "fingerprint": {
+    "protocol": "e4-cross-stack-v1",
+    "ollama_model": "qwen3.5:2b",
+    "ollama_digest": "0689d44085e06d165161a8a9a1731344278cfb5aade63a3c3dbdb48ab54b130a",
+    "hf_model_path": "/home/arbi/hf_models/Qwen3.5-2B",
+    "hf_local_metadata": {
+      "config.json": "ed1c1723241f23f7f4e23430759cbd7dcfb4103cbdfe052bfe7626b57c2615b4",
+      "tokenizer_config.json": "49e2b6e395f959f077f1e992b338919c0d4a9732fc6e613995e06557f843500c",
+      "model.safetensors.index.json": "aca8afed9da75b0f050b408d270766fd77627f1af401e240f61c3b47d0db02f9",
+      "weight_file_sizes": {
+        "model.safetensors-00001-of-00001.safetensors": 4548221488
+      }
+    },
+    "hf_dtype": "auto",
+    "hf_device": "cuda",
+    "hf_batch_size": 1,
+    "hf_device_map_arg": "auto",
+    "cuda_visible_devices": null,
+    "dataset_sha256": "35f5e96f95d74c0d12c9a09bf36ee1ffa1560a981d5ea994728f7d1a4311ad87",
+    "per_type": 5,
+    "full": true,
+    "seed": 42,
+    "repetitions": 3,
+    "top_logprobs": 20,
+    "think": false,
+    "temperature": 0.0,
+    "ollama_only": false,
+    "keep_alive": "10m"
+  },
+  "config_sha256": "8658551fee716e72f878e3da486ab1649b8394e61dc3a0d224e574e14094ed49",
+  "python": "3.10.12",
+  "platform": "Linux-5.15.0-164-generic-x86_64-with-glibc2.35",
+  "ollama_version": "0.40.5",
+  "ollama_python_package": "unknown",
+  "ollama_show": {
+    "template": "{{ .Prompt }}",
+    "details": {
+      "parent_model": "model.gguf",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "1.9B",
+      "quantization_level": "Q8_0"
+    },
+    "model_info": null
+  },
+  "repo_commit": "82ce1eec4300d3531ed757220280c1404bce1c71",
+  "notes": [
+    "Pipelines share LLM2Jev binary candidate prompts and assembler.",
+    "They may NOT share identical quantization, underlying model tensors or rendered chat-template tokens.",
+    "HF uses full-vocabulary prefill logits; Ollama uses one generated token, top-20 logprobs.",
+    "HF batch_size=1; serialized execution order alternates by task and repetition.",
+    "Timing is sequential per typed JevBench decision; model initialization excluded."
+  ],
+  "hf_device_map_actual": {
+    "model.embed_tokens": 0,
+    "lm_head": 0,
+    "model.layers.0": 0,
+    "model.layers.1": 0,
+    "model.layers.2": 0,
+    "model.layers.3": 0,
+    "model.layers.4": 0,
+    "model.layers.5": 0,
+    "model.layers.6": 0,
+    "model.layers.7": 0,
+    "model.layers.8": 0,
+    "model.layers.9": 1,
+    "model.layers.10": 1,
+    "model.layers.11": 1,
+    "model.layers.12": 1,
+    "model.layers.13": 1,
+    "model.layers.14": 1,
+    "model.layers.15": 1,
+    "model.layers.16": 1,
+    "model.layers.17": 1,
+    "model.layers.18": 1,
+    "model.layers.19": 1,
+    "model.layers.20": 1,
+    "model.layers.21": 1,
+    "model.layers.22": 1,
+    "model.layers.23": 1,
+    "model.norm": 1,
+    "model.rotary_emb": 1
+  },
+  "hf_tokenization": {
+    "yes_token_id": 9405,
+    "no_token_id": 2083,
+    "yes_decoded": "yes",
+    "no_decoded": "no",
+    "tokenizer_chat_template_sha256": "e9cb98e65623809a8a297af444986a3b417ecae1a19d519c0952eb1192abc5c1",
+    "model_config_class": "Qwen3_5TextConfig"
+  }
+}
