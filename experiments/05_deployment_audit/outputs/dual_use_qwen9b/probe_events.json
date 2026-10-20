@@ -1,0 +1,37 @@
+[
+  {
+    "probe": "dual_use",
+    "model": "qwen3.5:9b",
+    "timestamp_utc": "2026-10-20T14:02:48+00:00",
+    "generation": {
+      "probe": "generation",
+      "model": "qwen3.5:9b",
+      "served_model": "qwen3.5:9b",
+      "timestamp_utc": "2026-10-20T14:02:47+00:00",
+      "wall_time_s": 9.38692,
+      "load_duration_s": 8.70733,
+      "prompt_eval_count": 20,
+      "eval_count": 32,
+      "generated_content_present": false
+    },
+    "binary_scoring": {
+      "probe": "chat",
+      "model": "qwen3.5:9b",
+      "timestamp_utc": "2026-10-20T14:02:48+00:00",
+      "wall_time_s": 0.16005,
+      "load_duration_s": 0.00674,
+      "prompt_eval_count": 34,
+      "eval_count": 1,
+      "served_model": "qwen3.5:9b",
+      "logprobs_first_position_reported": true,
+      "yes_no_coverage": true
+    },
+    "both_paths_responded": false,
+    "same_served_model_tag": true,
+    "model_digest_before": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "model_digest_after": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+    "model_digest_unchanged": true,
+    "installed_tag_set_unchanged": true,
+    "snapshot_prefix": "after_dual_use_1_qwen3_5_9b"
+  }
+]
