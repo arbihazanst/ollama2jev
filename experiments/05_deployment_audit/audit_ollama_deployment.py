@@ -291,7 +291,8 @@ def probe_generation(host, model, timeout):
     payload = {
         "model": model,
         "messages": [{"role": "user", "content": "In one sentence, explain what an API is."}],
-        "stream": False, "options": {"temperature": 0, "num_predict": 32},
+        "stream": False, "think": False,
+        "options": {"temperature": 0, "num_predict": 64},
         "keep_alive": "10m",
     }
     start = time.perf_counter()
@@ -303,7 +304,10 @@ def probe_generation(host, model, timeout):
             if isinstance(response.get("load_duration"), (int, float)) else None,
         "prompt_eval_count": response.get("prompt_eval_count"),
         "eval_count": response.get("eval_count"),
-        "generated_content_present": bool((response.get("message") or {}).get("content")),
+        "generated_content_present": bool(((response.get("message") or {}).get("content") or "").strip()),
+        "generated_content_length": len(((response.get("message") or {}).get("content") or "").strip()),
+        "thinking_content_present": bool((response.get("message") or {}).get("thinking")),
+        "done_reason": response.get("done_reason"),
     }
 
 
@@ -395,7 +399,7 @@ def main():
                         "probe": "dual_use", "model": name, "timestamp_utc": utc_now(),
                         "generation": generation, "binary_scoring": binary,
                         "both_paths_responded": generation["generated_content_present"] and
-                            binary["logprobs_first_position_reported"],
+                            binary["logprobs_first_position_reported"] and binary["yes_no_coverage"],
                         "same_served_model_tag": generation.get("served_model") == binary.get("served_model"),
                     }
                 events.append(result)
@@ -415,6 +419,27 @@ def main():
                 events[-1]["installed_tag_set_unchanged"] = set(tags) == set(post_tags)
             except RuntimeError as err:
                 events[-1]["post_probe_inventory_warning"] = str(err)
+            item = events[-1]
+            kind = item.get("probe")
+            if "error" in item:
+                probe_pass = False
+            elif kind == "dual_use":
+                probe_pass = bool(
+                    item.get("both_paths_responded")
+                    and item.get("same_served_model_tag")
+                    and item.get("generation", {}).get("served_model") == name
+                    and item.get("binary_scoring", {}).get("served_model") == name
+                    and item.get("model_digest_unchanged")
+                    and item.get("installed_tag_set_unchanged")
+                )
+            elif kind == "chat":
+                probe_pass = bool(item.get("logprobs_first_position_reported") and
+                                  item.get("yes_no_coverage") and item.get("served_model") == name)
+            elif kind == "systemone":
+                probe_pass = bool(item.get("typed_answer_present"))
+            else:
+                probe_pass = False
+            item["probe_pass"] = probe_pass
             snapshot = report_snapshot(args.host, selected, tags, show_data, root, args.no_gpu)
             label = f"after_{mode}_{index+1}_{re.sub(r'[^A-Za-z0-9_-]+', '_', name)}"
             save_snapshot(args.output_dir, label, snapshot)
@@ -456,8 +481,11 @@ def main():
         print("TIP: Pass --models-dir /path/to/ollama/models for optional physical blob-size comparisons.")
     if events:
         for item in events:
-            print("  probe", item.get("probe"), item.get("model"), "ERROR=" + item["error"] if "error" in item else "OK")
-    return 0
+            passed = bool(item.get("probe_pass"))
+            print("  probe", item.get("probe"), item.get("model"),
+                  "PASS" if passed else "FAIL",
+                  ("error=" + item["error"]) if "error" in item else "")
+    return 2 if any(not item.get("probe_pass") for item in events) else 0
 
 
 if __name__ == "__main__":
