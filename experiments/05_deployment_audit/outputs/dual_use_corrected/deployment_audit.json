@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-10-20T14:15:03+00:00",
+  "timestamp_utc": "2026-10-20T14:23:11+00:00",
   "host": "http://127.0.0.1:11434",
   "ollama_version": "0.40.5",
   "python": "3.10.12",
@@ -21,7 +21,7 @@
   "missing": [],
   "warnings": [],
   "baseline": {
-    "timestamp_utc": "2026-10-20T14:14:23+00:00",
+    "timestamp_utc": "2026-10-20T14:22:51+00:00",
     "models": [
       {
         "model": "qwen3.5:0.8b",
@@ -147,13 +147,13 @@
         "model_architecture": "qwen35",
         "capabilities": "completion,vision,tools,thinking",
         "loaded": true,
-        "loaded_reported_bytes": 37230645079,
-        "loaded_reported_gib": 34.6737,
-        "loaded_vram_bytes": 37230645079,
-        "loaded_vram_gib": 34.6737,
+        "loaded_reported_bytes": 35083161431,
+        "loaded_reported_gib": 32.6737,
+        "loaded_vram_bytes": 35083161431,
+        "loaded_vram_gib": 32.6737,
         "loaded_ram_estimate_bytes": 0,
         "context_length": 262144,
-        "expires_at": "2026-10-20T23:14:36.877753019+09:00",
+        "expires_at": "2026-10-20T23:25:03.564535712+09:00",
         "manifest_status": "ok",
         "manifest_unique_blob_bytes": 17741872154,
         "manifest_unique_blob_gib": 16.5234
@@ -315,7 +315,7 @@
         "loaded_vram_gib": 18.5159,
         "loaded_ram_estimate_bytes": 0,
         "context_length": 16384,
-        "expires_at": "2026-10-20T23:19:22.962325631+09:00",
+        "expires_at": "2026-10-20T23:27:49.61270192+09:00",
         "manifest_status": "ok",
         "manifest_unique_blob_bytes": 17475010159,
         "manifest_unique_blob_gib": 16.2749
@@ -357,7 +357,7 @@
           "parameter_size": "26.9B",
           "quantization_level": "Q4_K_M"
         },
-        "expires_at": "2026-10-20T23:19:22.962325631+09:00",
+        "expires_at": "2026-10-20T23:27:49.61270192+09:00",
         "size_vram": 19881326017,
         "context_length": 16384,
         "runner": "llamacpp"
@@ -365,7 +365,7 @@
       {
         "name": "qwen3.8:latest",
         "model": "qwen3.8:latest",
-        "size": 37230645079,
+        "size": 35083161431,
         "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
         "details": {
           "parent_model": "",
@@ -377,8 +377,8 @@
           "parameter_size": "27.3B",
           "quantization_level": "Q4_K_M"
         },
-        "expires_at": "2026-10-20T23:14:36.877753019+09:00",
-        "size_vram": 37230645079,
+        "expires_at": "2026-10-20T23:25:03.564535712+09:00",
+        "size_vram": 35083161431,
         "context_length": 262144,
         "runner": "llamacpp"
       },
@@ -412,9 +412,9 @@
           "name": "NVIDIA RTX A6000",
           "driver_version": "560.35.05",
           "memory.total": "49140",
-          "memory.used": "36844",
-          "memory.free": "11726",
-          "utilization.gpu": "19"
+          "memory.used": "34894",
+          "memory.free": "13676",
+          "utilization.gpu": "10"
         },
         {
           "index": "1",
@@ -422,9 +422,9 @@
           "name": "NVIDIA RTX A6000",
           "driver_version": "560.35.05",
           "memory.total": "49140",
-          "memory.used": "39558",
-          "memory.free": "9012",
-          "utilization.gpu": "92"
+          "memory.used": "37876",
+          "memory.free": "10694",
+          "utilization.gpu": "88"
         },
         {
           "index": "2",
@@ -432,9 +432,9 @@
           "name": "NVIDIA RTX A6000",
           "driver_version": "560.35.05",
           "memory.total": "49140",
-          "memory.used": "40752",
-          "memory.free": "7818",
-          "utilization.gpu": "11"
+          "memory.used": "40276",
+          "memory.free": "8294",
+          "utilization.gpu": "100"
         },
         {
           "index": "3",
@@ -442,9 +442,9 @@
           "name": "NVIDIA RTX A6000",
           "driver_version": "560.35.05",
           "memory.total": "49140",
-          "memory.used": "29471",
-          "memory.free": "19099",
-          "utilization.gpu": "28"
+          "memory.used": "33575",
+          "memory.free": "14995",
+          "utilization.gpu": "15"
         }
       ],
       "processes": [
@@ -480,9 +480,9 @@
         },
         {
           "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
-          "pid": "3337030",
+          "pid": "3361004",
           "process_name": "/usr/local/lib/ollama/llama-server",
-          "used_gpu_memory": "13248"
+          "used_gpu_memory": "11298"
         },
         {
           "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
@@ -498,9 +498,9 @@
         },
         {
           "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
-          "pid": "3337030",
+          "pid": "3361004",
           "process_name": "/usr/local/lib/ollama/llama-server",
-          "used_gpu_memory": "10434"
+          "used_gpu_memory": "8752"
         },
         {
           "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
@@ -516,9 +516,9 @@
         },
         {
           "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
-          "pid": "3337030",
+          "pid": "3361004",
           "process_name": "/usr/local/lib/ollama/llama-server",
-          "used_gpu_memory": "7762"
+          "used_gpu_memory": "7286"
         },
         {
           "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
@@ -528,9 +528,9 @@
         },
         {
           "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
-          "pid": "3337030",
+          "pid": "3361004",
           "process_name": "/usr/local/lib/ollama/llama-server",
-          "used_gpu_memory": "10500"
+          "used_gpu_memory": "14606"
         }
       ]
     },
@@ -770,71 +770,79 @@
     {
       "probe": "dual_use",
       "model": "qwen3.5:9b",
-      "timestamp_utc": "2026-10-20T14:14:40+00:00",
+      "timestamp_utc": "2026-10-20T14:23:08+00:00",
       "generation": {
         "probe": "generation",
         "model": "qwen3.5:9b",
         "served_model": "qwen3.5:9b",
-        "timestamp_utc": "2026-10-20T14:14:39+00:00",
-        "wall_time_s": 15.77874,
-        "load_duration_s": 14.43407,
-        "prompt_eval_count": 20,
-        "eval_count": 32,
-        "generated_content_present": false
+        "timestamp_utc": "2026-10-20T14:23:07+00:00",
+        "wall_time_s": 16.03403,
+        "load_duration_s": 13.19511,
+        "prompt_eval_count": 22,
+        "eval_count": 37,
+        "generated_content_present": true,
+        "generated_content_length": 220,
+        "thinking_content_present": false,
+        "done_reason": "stop"
       },
       "binary_scoring": {
         "probe": "chat",
         "model": "qwen3.5:9b",
-        "timestamp_utc": "2026-10-20T14:14:40+00:00",
-        "wall_time_s": 0.5292,
-        "load_duration_s": 0.0048,
+        "timestamp_utc": "2026-10-20T14:23:08+00:00",
+        "wall_time_s": 0.78312,
+        "load_duration_s": 0.00261,
         "prompt_eval_count": 34,
         "eval_count": 1,
         "served_model": "qwen3.5:9b",
         "logprobs_first_position_reported": true,
         "yes_no_coverage": true
       },
-      "both_paths_responded": false,
+      "both_paths_responded": true,
       "same_served_model_tag": true,
       "model_digest_before": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
       "model_digest_after": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
       "model_digest_unchanged": true,
       "installed_tag_set_unchanged": true,
+      "probe_pass": true,
       "snapshot_prefix": "after_dual_use_1_qwen3_5_9b"
     },
     {
       "probe": "dual_use",
       "model": "qwen3.8:latest",
-      "timestamp_utc": "2026-10-20T14:15:03+00:00",
+      "timestamp_utc": "2026-10-20T14:23:11+00:00",
       "generation": {
         "probe": "generation",
         "model": "qwen3.8:latest",
         "served_model": "qwen3.8:latest",
-        "timestamp_utc": "2026-10-20T14:15:02+00:00",
-        "wall_time_s": 22.49319,
-        "load_duration_s": 20.57336,
-        "prompt_eval_count": 20,
-        "eval_count": 32,
-        "generated_content_present": false
+        "timestamp_utc": "2026-10-20T14:23:10+00:00",
+        "wall_time_s": 1.50383,
+        "load_duration_s": 0.00337,
+        "prompt_eval_count": 22,
+        "eval_count": 29,
+        "generated_content_present": true,
+        "generated_content_length": 168,
+        "thinking_content_present": false,
+        "done_reason": "stop"
       },
       "binary_scoring": {
         "probe": "chat",
         "model": "qwen3.8:latest",
-        "timestamp_utc": "2026-10-20T14:15:03+00:00",
-        "wall_time_s": 0.59437,
-        "load_duration_s": 0.00272,
+        "timestamp_utc": "2026-10-20T14:23:11+00:00",
+        "wall_time_s": 0.7893,
+        "load_duration_s": 0.00291,
         "prompt_eval_count": 34,
         "eval_count": 1,
         "served_model": "qwen3.8:latest",
         "logprobs_first_position_reported": true,
         "yes_no_coverage": true
       },
-      "both_paths_responded": false,
+      "both_paths_responded": true,
       "same_served_model_tag": true,
       "model_digest_before": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
       "model_digest_after": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
       "model_digest_unchanged": true,
       "installed_tag_set_unchanged": true,
+      "probe_pass": true,
       "snapshot_prefix": "after_dual_use_2_qwen3_8_latest"
     }
   ],

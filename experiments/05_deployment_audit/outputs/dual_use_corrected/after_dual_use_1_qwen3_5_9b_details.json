@@ -1,5 +1,5 @@
 {
-  "timestamp_utc": "2026-10-20T14:14:40+00:00",
+  "timestamp_utc": "2026-10-20T14:23:08+00:00",
   "models": [
     {
       "model": "qwen3.5:0.8b",
@@ -98,13 +98,13 @@
       "model_architecture": "qwen35",
       "capabilities": "completion,vision,tools,thinking",
       "loaded": true,
-      "loaded_reported_bytes": 17535850245,
-      "loaded_reported_gib": 16.3315,
-      "loaded_vram_bytes": 15590269909,
-      "loaded_vram_gib": 14.5196,
-      "loaded_ram_estimate_bytes": 1945580336,
+      "loaded_reported_bytes": 16782857334,
+      "loaded_reported_gib": 15.6303,
+      "loaded_vram_bytes": 13570618161,
+      "loaded_vram_gib": 12.6386,
+      "loaded_ram_estimate_bytes": 3212239173,
       "context_length": 262144,
-      "expires_at": "2026-10-20T23:24:40.284983682+09:00",
+      "expires_at": "2026-10-20T23:33:08.655221221+09:00",
       "manifest_status": "ok",
       "manifest_unique_blob_bytes": 6594474711,
       "manifest_unique_blob_gib": 6.1416
@@ -124,14 +124,14 @@
       "format": "gguf",
       "model_architecture": "qwen35",
       "capabilities": "completion,vision,tools,thinking",
-      "loaded": false,
-      "loaded_reported_bytes": null,
-      "loaded_reported_gib": null,
-      "loaded_vram_bytes": null,
-      "loaded_vram_gib": null,
-      "loaded_ram_estimate_bytes": null,
-      "context_length": null,
-      "expires_at": null,
+      "loaded": true,
+      "loaded_reported_bytes": 35083161431,
+      "loaded_reported_gib": 32.6737,
+      "loaded_vram_bytes": 35083161431,
+      "loaded_vram_gib": 32.6737,
+      "loaded_ram_estimate_bytes": 0,
+      "context_length": 262144,
+      "expires_at": "2026-10-20T23:25:03.564535712+09:00",
       "manifest_status": "ok",
       "manifest_unique_blob_bytes": 17741872154,
       "manifest_unique_blob_gib": 16.5234
@@ -293,7 +293,7 @@
       "loaded_vram_gib": 18.5159,
       "loaded_ram_estimate_bytes": 0,
       "context_length": 16384,
-      "expires_at": "2026-10-20T23:19:35.122490254+09:00",
+      "expires_at": "2026-10-20T23:28:06.946149309+09:00",
       "manifest_status": "ok",
       "manifest_unique_blob_bytes": 17475010159,
       "manifest_unique_blob_gib": 16.2749
@@ -323,7 +323,7 @@
     {
       "name": "qwen3.5:9b",
       "model": "qwen3.5:9b",
-      "size": 17535850245,
+      "size": 16782857334,
       "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
       "details": {
         "parent_model": "",
@@ -335,8 +335,8 @@
         "parameter_size": "9.7B",
         "quantization_level": "Q4_K_M"
       },
-      "expires_at": "2026-10-20T23:24:40.284983682+09:00",
-      "size_vram": 15590269909,
+      "expires_at": "2026-10-20T23:33:08.655221221+09:00",
+      "size_vram": 13570618161,
       "context_length": 262144,
       "runner": "llamacpp"
     },
@@ -355,9 +355,29 @@
         "parameter_size": "26.9B",
         "quantization_level": "Q4_K_M"
       },
-      "expires_at": "2026-10-20T23:19:35.122490254+09:00",
+      "expires_at": "2026-10-20T23:28:06.946149309+09:00",
       "size_vram": 19881326017,
       "context_length": 16384,
+      "runner": "llamacpp"
+    },
+    {
+      "name": "qwen3.8:latest",
+      "model": "qwen3.8:latest",
+      "size": 35083161431,
+      "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "27.3B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-20T23:25:03.564535712+09:00",
+      "size_vram": 35083161431,
+      "context_length": 262144,
       "runner": "llamacpp"
     },
     {
@@ -390,9 +410,9 @@
         "name": "NVIDIA RTX A6000",
         "driver_version": "560.35.05",
         "memory.total": "49140",
-        "memory.used": "25538",
-        "memory.free": "23032",
-        "utilization.gpu": "9"
+        "memory.used": "34894",
+        "memory.free": "13676",
+        "utilization.gpu": "12"
       },
       {
         "index": "1",
@@ -400,9 +420,9 @@
         "name": "NVIDIA RTX A6000",
         "driver_version": "560.35.05",
         "memory.total": "49140",
-        "memory.used": "29386",
-        "memory.free": "19184",
-        "utilization.gpu": "71"
+        "memory.used": "37876",
+        "memory.free": "10694",
+        "utilization.gpu": "82"
       },
       {
         "index": "2",
@@ -410,9 +430,9 @@
         "name": "NVIDIA RTX A6000",
         "driver_version": "560.35.05",
         "memory.total": "49140",
-        "memory.used": "33250",
-        "memory.free": "15320",
-        "utilization.gpu": "100"
+        "memory.used": "40276",
+        "memory.free": "8294",
+        "utilization.gpu": "63"
       },
       {
         "index": "3",
@@ -420,9 +440,9 @@
         "name": "NVIDIA RTX A6000",
         "driver_version": "560.35.05",
         "memory.total": "49140",
-        "memory.used": "33485",
-        "memory.free": "15085",
-        "utilization.gpu": "18"
+        "memory.used": "47850",
+        "memory.free": "720",
+        "utilization.gpu": "27"
       }
     ],
     "processes": [
@@ -458,9 +478,9 @@
       },
       {
         "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
-        "pid": "3359843",
+        "pid": "3361004",
         "process_name": "/usr/local/lib/ollama/llama-server",
-        "used_gpu_memory": "1944"
+        "used_gpu_memory": "11298"
       },
       {
         "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
@@ -476,9 +496,9 @@
       },
       {
         "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
-        "pid": "3359843",
+        "pid": "3361004",
         "process_name": "/usr/local/lib/ollama/llama-server",
-        "used_gpu_memory": "260"
+        "used_gpu_memory": "8752"
       },
       {
         "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
@@ -494,9 +514,9 @@
       },
       {
         "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
-        "pid": "3359843",
+        "pid": "3361004",
         "process_name": "/usr/local/lib/ollama/llama-server",
-        "used_gpu_memory": "260"
+        "used_gpu_memory": "7286"
       },
       {
         "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
@@ -506,9 +526,15 @@
       },
       {
         "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
-        "pid": "3359843",
+        "pid": "3361004",
         "process_name": "/usr/local/lib/ollama/llama-server",
-        "used_gpu_memory": "14514"
+        "used_gpu_memory": "14606"
+      },
+      {
+        "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
+        "pid": "3378877",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "14266"
       }
     ]
   },
