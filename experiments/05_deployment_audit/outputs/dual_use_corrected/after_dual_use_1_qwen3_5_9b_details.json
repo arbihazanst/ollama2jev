@@ -1,0 +1,672 @@
+{
+  "timestamp_utc": "2026-10-20T14:14:40+00:00",
+  "models": [
+    {
+      "model": "qwen3.5:0.8b",
+      "category": "general-purpose",
+      "installed": true,
+      "digest": "f3817196d142eaf72ce79dfebe53dcb20bd21da87ce13e138a8f8e10a866b3a4",
+      "modified_at": "2026-05-26T13:21:23.617516254+09:00",
+      "installed_reported_bytes": 1036046583,
+      "installed_reported_gib": 0.9649,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "873.44M",
+      "quantization": "Q8_0",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "completion,vision,tools,thinking",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 1036046583,
+      "manifest_unique_blob_gib": 0.9649
+    },
+    {
+      "model": "qwen3.5:2b",
+      "category": "general-purpose",
+      "installed": true,
+      "digest": "0689d44085e06d165161a8a9a1731344278cfb5aade63a3c3dbdb48ab54b130a",
+      "modified_at": "2026-10-17T13:38:05.683121379+09:00",
+      "installed_reported_bytes": 2683396812,
+      "installed_reported_gib": 2.4991,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "1.9B",
+      "quantization": "Q8_0",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "completion,vision,tools,thinking",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 2683398370,
+      "manifest_unique_blob_gib": 2.4991
+    },
+    {
+      "model": "qwen3.5:4b",
+      "category": "general-purpose",
+      "installed": true,
+      "digest": "d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04",
+      "modified_at": "2026-10-17T13:58:32.10562304+09:00",
+      "installed_reported_bytes": 3324173934,
+      "installed_reported_gib": 3.0959,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "4.2B",
+      "quantization": "Q4_K_M",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "completion,vision,tools,thinking",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 3324175492,
+      "manifest_unique_blob_gib": 3.0959
+    },
+    {
+      "model": "qwen3.5:9b",
+      "category": "general-purpose",
+      "installed": true,
+      "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "modified_at": "2026-09-15T19:43:46.332640836+09:00",
+      "installed_reported_bytes": 6594474711,
+      "installed_reported_gib": 6.1416,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "9.7B",
+      "quantization": "Q4_K_M",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "completion,vision,tools,thinking",
+      "loaded": true,
+      "loaded_reported_bytes": 17535850245,
+      "loaded_reported_gib": 16.3315,
+      "loaded_vram_bytes": 15590269909,
+      "loaded_vram_gib": 14.5196,
+      "loaded_ram_estimate_bytes": 1945580336,
+      "context_length": 262144,
+      "expires_at": "2026-10-20T23:24:40.284983682+09:00",
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 6594474711,
+      "manifest_unique_blob_gib": 6.1416
+    },
+    {
+      "model": "qwen3.8:latest",
+      "category": "general-purpose",
+      "installed": true,
+      "digest": "22130167c4c20e20c7b71454612966ca8e8171e9b3cc8ab6ce8aa6cbfec79643",
+      "modified_at": "2026-08-17T10:41:20.939892748+09:00",
+      "installed_reported_bytes": 17741872154,
+      "installed_reported_gib": 16.5234,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "27.3B",
+      "quantization": "Q4_K_M",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "completion,vision,tools,thinking",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 17741872154,
+      "manifest_unique_blob_gib": 16.5234
+    },
+    {
+      "model": "tev1:0.8b",
+      "category": "native-systemone",
+      "installed": true,
+      "digest": "abc31fdb0bf52506cc47091145ac19c4cfb509b73a6841789324f9e32200c099",
+      "modified_at": "2026-10-17T22:35:09.552654347+09:00",
+      "installed_reported_bytes": 833606657,
+      "installed_reported_gib": 0.7764,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "772.85M",
+      "quantization": "Q8_0",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "decision",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 833608115,
+      "manifest_unique_blob_gib": 0.7764
+    },
+    {
+      "model": "tev1:4b",
+      "category": "native-systemone",
+      "installed": true,
+      "digest": "7954dce22bc6c29c3b119656207681d12cb34434fed7caa086bfbc919bef0740",
+      "modified_at": "2026-10-18T00:41:49.323365171+09:00",
+      "installed_reported_bytes": 4610594686,
+      "installed_reported_gib": 4.294,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "4.3B",
+      "quantization": "Q8_0",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "decision",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 4610596137,
+      "manifest_unique_blob_gib": 4.294
+    },
+    {
+      "model": "nimble-v3:9b",
+      "category": "native-systemone",
+      "installed": true,
+      "digest": "6f0e87f398007002ca6de5899f8e62c0826a4e8b723b4fc533526ef9c2b2c487",
+      "modified_at": "2026-10-17T19:10:49.466687711+09:00",
+      "installed_reported_bytes": 9527534635,
+      "installed_reported_gib": 8.8732,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "9.0B",
+      "quantization": "Q8_0",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "decision",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 9527536031,
+      "manifest_unique_blob_gib": 8.8732
+    },
+    {
+      "model": "clef-flash:9b",
+      "category": "native-systemone",
+      "installed": true,
+      "digest": "73e026ff389b28464bb26f8978f3164851a76832f0d339032747e2c56f98ea29",
+      "modified_at": "2026-10-17T23:52:27.307964003+09:00",
+      "installed_reported_bytes": 10578965269,
+      "installed_reported_gib": 9.8524,
+      "family": "clef",
+      "families": "clef",
+      "parameter_size": "9.1B",
+      "quantization": "Q8_0",
+      "format": "gguf",
+      "model_architecture": "clef",
+      "capabilities": "decision,vision",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 10578966574,
+      "manifest_unique_blob_gib": 9.8524
+    },
+    {
+      "model": "clef:27b",
+      "category": "native-systemone",
+      "installed": true,
+      "digest": "7885241a86db4803ff95b6a8fc60dc132a5f9612a76db786a304cfa8c760f84b",
+      "modified_at": "2026-10-17T23:30:55.985407493+09:00",
+      "installed_reported_bytes": 20163365656,
+      "installed_reported_gib": 18.7786,
+      "family": "clef",
+      "families": "clef",
+      "parameter_size": "27.0B",
+      "quantization": "Q4_K_M",
+      "format": "gguf",
+      "model_architecture": "clef",
+      "capabilities": "decision,vision",
+      "loaded": false,
+      "loaded_reported_bytes": null,
+      "loaded_reported_gib": null,
+      "loaded_vram_bytes": null,
+      "loaded_vram_gib": null,
+      "loaded_ram_estimate_bytes": null,
+      "context_length": null,
+      "expires_at": null,
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 20163366953,
+      "manifest_unique_blob_gib": 18.7786
+    },
+    {
+      "model": "pplx-decider:latest",
+      "category": "native-systemone",
+      "installed": true,
+      "digest": "f3950da72565e2f60c6005109c55fa1e6fa1dbf37824f172b644e28313e9b435",
+      "modified_at": "2026-10-17T22:27:12.435230201+09:00",
+      "installed_reported_bytes": 17475009308,
+      "installed_reported_gib": 16.2749,
+      "family": "qwen35",
+      "families": "qwen35",
+      "parameter_size": "26.9B",
+      "quantization": "Q4_K_M",
+      "format": "gguf",
+      "model_architecture": "qwen35",
+      "capabilities": "decision,vision",
+      "loaded": true,
+      "loaded_reported_bytes": 19881326017,
+      "loaded_reported_gib": 18.5159,
+      "loaded_vram_bytes": 19881326017,
+      "loaded_vram_gib": 18.5159,
+      "loaded_ram_estimate_bytes": 0,
+      "context_length": 16384,
+      "expires_at": "2026-10-20T23:19:35.122490254+09:00",
+      "manifest_status": "ok",
+      "manifest_unique_blob_bytes": 17475010159,
+      "manifest_unique_blob_gib": 16.2749
+    }
+  ],
+  "raw_running_models": [
+    {
+      "name": "gpt-oss:120b",
+      "model": "gpt-oss:120b",
+      "size": 66383868063,
+      "digest": "a951a23b46a1f6093dafee2ea481d634b4e31ac720a8a16f3f91e04f5a40ecd9",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gptoss",
+        "families": [
+          "gptoss"
+        ],
+        "parameter_size": "116.8B",
+        "quantization_level": "MXFP4"
+      },
+      "expires_at": "2026-10-21T19:55:15.711318129+09:00",
+      "size_vram": 66383868063,
+      "context_length": 32768,
+      "runner": "llamacpp"
+    },
+    {
+      "name": "qwen3.5:9b",
+      "model": "qwen3.5:9b",
+      "size": 17535850245,
+      "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "9.7B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-20T23:24:40.284983682+09:00",
+      "size_vram": 15590269909,
+      "context_length": 262144,
+      "runner": "llamacpp"
+    },
+    {
+      "name": "pplx-decider:latest",
+      "model": "pplx-decider:latest",
+      "size": 19881326017,
+      "digest": "f3950da72565e2f60c6005109c55fa1e6fa1dbf37824f172b644e28313e9b435",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "26.9B",
+        "quantization_level": "Q4_K_M"
+      },
+      "expires_at": "2026-10-20T23:19:35.122490254+09:00",
+      "size_vram": 19881326017,
+      "context_length": 16384,
+      "runner": "llamacpp"
+    },
+    {
+      "name": "gpt-oss:20b",
+      "model": "gpt-oss:20b",
+      "size": 13601886698,
+      "digest": "9ba9cc2b4e02463b933096090530aef679d534dd91ecc9afadfb2dbfdc59f3c5",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gpt-oss",
+        "families": [
+          "gpt-oss"
+        ],
+        "parameter_size": "20.9B",
+        "quantization_level": "MXFP4"
+      },
+      "expires_at": "2026-10-20T22:00:55.070336422+09:00",
+      "size_vram": 13601886698,
+      "context_length": 131072,
+      "runner": "llamacpp"
+    }
+  ],
+  "nvidia_smi": {
+    "status": "ok",
+    "gpus": [
+      {
+        "index": "0",
+        "uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "name": "NVIDIA RTX A6000",
+        "driver_version": "560.35.05",
+        "memory.total": "49140",
+        "memory.used": "25538",
+        "memory.free": "23032",
+        "utilization.gpu": "9"
+      },
+      {
+        "index": "1",
+        "uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
+        "name": "NVIDIA RTX A6000",
+        "driver_version": "560.35.05",
+        "memory.total": "49140",
+        "memory.used": "29386",
+        "memory.free": "19184",
+        "utilization.gpu": "71"
+      },
+      {
+        "index": "2",
+        "uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
+        "name": "NVIDIA RTX A6000",
+        "driver_version": "560.35.05",
+        "memory.total": "49140",
+        "memory.used": "33250",
+        "memory.free": "15320",
+        "utilization.gpu": "100"
+      },
+      {
+        "index": "3",
+        "uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
+        "name": "NVIDIA RTX A6000",
+        "driver_version": "560.35.05",
+        "memory.total": "49140",
+        "memory.used": "33485",
+        "memory.free": "15085",
+        "utilization.gpu": "18"
+      }
+    ],
+    "processes": [
+      {
+        "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "pid": "985366",
+        "process_name": "/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3",
+        "used_gpu_memory": "550"
+      },
+      {
+        "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "pid": "985364",
+        "process_name": "/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3",
+        "used_gpu_memory": "550"
+      },
+      {
+        "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "pid": "2932463",
+        "process_name": "/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3",
+        "used_gpu_memory": "550"
+      },
+      {
+        "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "pid": "4057400",
+        "process_name": "/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3",
+        "used_gpu_memory": "550"
+      },
+      {
+        "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "pid": "2900656",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "21352"
+      },
+      {
+        "gpu_uuid": "GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb",
+        "pid": "3359843",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "1944"
+      },
+      {
+        "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
+        "pid": "1420357",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "16396"
+      },
+      {
+        "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
+        "pid": "2900656",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "12700"
+      },
+      {
+        "gpu_uuid": "GPU-cdc3961a-0ffa-a346-9f18-a667350924f2",
+        "pid": "3359843",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "260"
+      },
+      {
+        "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
+        "pid": "2706571",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "20202"
+      },
+      {
+        "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
+        "pid": "2900656",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "12762"
+      },
+      {
+        "gpu_uuid": "GPU-0aa50623-1ddb-69c4-60df-61f4855803f9",
+        "pid": "3359843",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "260"
+      },
+      {
+        "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
+        "pid": "2900656",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "18948"
+      },
+      {
+        "gpu_uuid": "GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb",
+        "pid": "3359843",
+        "process_name": "/usr/local/lib/ollama/llama-server",
+        "used_gpu_memory": "14514"
+      }
+    ]
+  },
+  "manifests": {
+    "qwen3.5:0.8b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:b14c6eab49f986e99b2daf9cedac5183c74d4f5ce2585ebb52b8492778adec39": 476,
+        "sha256:afb707b6b8fac6e475acc42bc8380fc0b8d2e0e4190be5a969fbf62fcc897db5": 1036034688,
+        "sha256:9be69ef463066202c1b1bd299aaf42bad370a01ba4b40d293617859720776c17": 11354,
+        "sha256:9371364b27a52acac9d87f88bd93c9db1174d8d6ec57f6888925cdc1788871ff": 65
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/qwen3.5/0.8b",
+      "referenced_blobs": 4,
+      "missing_blobs": []
+    },
+    "qwen3.5:2b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:0f7af3a2d4145d7e4dbc9dbab778ac7a6aee7104fb93570c047726b5a816781f": 175,
+        "sha256:5ddf560e34046fd958b2576324f2a9b57d70f297afe6526958d60a23f3bfc20b": 671372768,
+        "sha256:e8bf47d40c5ba68baf8f3e503ee36710da6e8641cb0a670a508cff5b3f0cfbf7": 2012012448,
+        "sha256:b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315": 13,
+        "sha256:50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32": 11343,
+        "sha256:9371364b27a52acac9d87f88bd93c9db1174d8d6ec57f6888925cdc1788871ff": 65,
+        "sha256:0b28bbb3449dcb370c881ce3afacc557047fc7ecbcacaeb280c92c2bf9f11beb": 470,
+        "sha256:0689d44085e06d165161a8a9a1731344278cfb5aade63a3c3dbdb48ab54b130a": 1088
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/qwen3.5/2b",
+      "referenced_blobs": 8,
+      "missing_blobs": []
+    },
+    "qwen3.5:4b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:788a4d94bc3f431ac0cd067005be4b838a09330427962952420b05d10ecf84db": 177,
+        "sha256:e56a899b1540860385465756dd308c84417410b94dbc1c380adffd20a921ca60": 675569120,
+        "sha256:a9d0a3e1d8c91732a3812becd31f8d4a8ff57414903f226306069f0437e2ac50": 2648593216,
+        "sha256:b507b9c2f6ca642bffcd06665ea7c91f235fd32daeefdf875a0f938db05fb315": 13,
+        "sha256:50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32": 11343,
+        "sha256:9371364b27a52acac9d87f88bd93c9db1174d8d6ec57f6888925cdc1788871ff": 65,
+        "sha256:492e37dc69072c5a189a0cf21d32d844c983d599e4553a1e4d2ebd3f6b1299e2": 470,
+        "sha256:d8b0f5e9760cd1682034f292d7ef72ec46f432149be0df7574bf2d6e92e38c04": 1088
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/qwen3.5/4b",
+      "referenced_blobs": 8,
+      "missing_blobs": []
+    },
+    "qwen3.5:9b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:be595b49fe22012bd1f5605ec14c7ffa58331783a88a4fd8c22e5fc8ec42cf9f": 475,
+        "sha256:dec52a44569a2a25341c4e4d3fee25846eed4f6f0b936278e3a3c900bb99d37c": 6594462816,
+        "sha256:7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2": 11355,
+        "sha256:9371364b27a52acac9d87f88bd93c9db1174d8d6ec57f6888925cdc1788871ff": 65
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/qwen3.5/9b",
+      "referenced_blobs": 4,
+      "missing_blobs": []
+    },
+    "qwen3.8:latest": {
+      "status": "ok",
+      "blobs": {
+        "sha256:492b2922d38e553cabc2d319345644ed482874fbf5e5c9e4495cbf8e17b0cf5f": 215,
+        "sha256:ac3714bfdddeca31351f2752bf1a63f266f4df87c0b68c895e44945ca704448e": 931146016,
+        "sha256:f5f1dd8920d417aac2718b0bda3403da274301efdd6760b4f0f4b864ff2ad57d": 16810714464,
+        "sha256:4c6a8e842ef0d8504549facfb03f1273a8d0022991519bc1888522cc1a5517d1": 11345,
+        "sha256:906ee87bde6cff7bf3c3b1550f55cbbec261e027187fbb9f511f908ffc418334": 114
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/qwen3.8/latest",
+      "referenced_blobs": 5,
+      "missing_blobs": []
+    },
+    "tev1:0.8b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:2ca85e17ada004f7fcd6cf9daaa0677489d1fdcd7af86dda501628cd3bb21591": 138,
+        "sha256:7daa72d2ed4fa16f5120bc1bb89713531d0f511c360e9228905ba88c092f13b5": 833594080,
+        "sha256:5153ce5bc5e5a4e0151f878690119e49ee8953aeecf994a48615f0754e1da73b": 11344,
+        "sha256:88d60e10f694a6ba067d033b8fa09363930ef340afab62d09f58bb59f8397ed8": 1078,
+        "sha256:ce4a164fc04605703b485251fe9f1a181688ba0eb6badb80cc6335c0de17ca0d": 17,
+        "sha256:cb16f3186b079eb3260ef017e3fcb8b2470650a1ae623331c4e8bb992c89aa27": 470,
+        "sha256:abc31fdb0bf52506cc47091145ac19c4cfb509b73a6841789324f9e32200c099": 988
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/tev1/0.8b",
+      "referenced_blobs": 7,
+      "missing_blobs": []
+    },
+    "tev1:4b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:1c7da6bb2be30fb5c58286293f26ad41f9cb8ce28e77751b3fea226e9b74f557": 135,
+        "sha256:50696f76ca4ee208f01de2727a48eedabbf2f4c1ed6da7e2b8626e37baace809": 4610582112,
+        "sha256:5153ce5bc5e5a4e0151f878690119e49ee8953aeecf994a48615f0754e1da73b": 11344,
+        "sha256:88d60e10f694a6ba067d033b8fa09363930ef340afab62d09f58bb59f8397ed8": 1078,
+        "sha256:ce4a164fc04605703b485251fe9f1a181688ba0eb6badb80cc6335c0de17ca0d": 17,
+        "sha256:3ea3be2f2026edebad2aaf052e73845ed93d79b8921c7f39f024a27526e26f1d": 470,
+        "sha256:7954dce22bc6c29c3b119656207681d12cb34434fed7caa086bfbc919bef0740": 981
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/tev1/4b",
+      "referenced_blobs": 7,
+      "missing_blobs": []
+    },
+    "nimble-v3:9b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:06f4781c58bb4adeba28a09371a8f2d05e1a8363b3a59a429fbc312f7964fdd3": 163,
+        "sha256:9386bcbb10011662be9033857f00c02d9e19d2b72f6a37cbbb086b098e3bb869": 9527503392,
+        "sha256:11cc89ebc0f4db20218516f636d64995442b9e77cccd3a882155fb4d76b52618": 19719,
+        "sha256:50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32": 11343,
+        "sha256:db8fbfd0cb288a053f83ac9014ca9bac2558b1bbcd80b5c408a548e7acba8a24": 18,
+        "sha256:4f30b1db22d37ecb2acd048a67574cae5489628699a07f56459fd36ac853983a": 470,
+        "sha256:6f0e87f398007002ca6de5899f8e62c0826a4e8b723b4fc533526ef9c2b2c487": 926
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/nimble-v3/9b",
+      "referenced_blobs": 7,
+      "missing_blobs": []
+    },
+    "clef-flash:9b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:0496d42ec73f0e118223c52b1d0f610c7dc8810ce5e52ac69f93b2872ab95335": 131,
+        "sha256:d7c352faf1bdd9ea24d0b9347e8eb1eb4bbadeff6c02383bf750215a74f2f1f1": 9657260192,
+        "sha256:a98ed89767816b8505e126904c4f9102976d35c88321d9deb97ac67d1626d143": 921704928,
+        "sha256:58e1b82a691f46c155e57be607f1031930ea0cccc22daf4447f91d360f74b2d2": 18,
+        "sha256:8f7e6863135ca1307b8cb301c5b486dacac90cc95f3bcda6c98ceabc64f5a30c": 470,
+        "sha256:73e026ff389b28464bb26f8978f3164851a76832f0d339032747e2c56f98ea29": 835
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/clef-flash/9b",
+      "referenced_blobs": 6,
+      "missing_blobs": []
+    },
+    "clef:27b": {
+      "status": "ok",
+      "blobs": {
+        "sha256:d67cc34c1ff3c151c3bcbf4893932577004058eedcb87ef05c919d2ec492d903": 134,
+        "sha256:2a3e89934a6dbd7d4c53868cd810b89c50095dd324f846d62f4e8c779547e234": 931146304,
+        "sha256:bd9b8ae24c5752a2bb5e2733d5168340d5f04457e02b8bf0d1bc9285ec3d4f61": 19232219200,
+        "sha256:58e1b82a691f46c155e57be607f1031930ea0cccc22daf4447f91d360f74b2d2": 18,
+        "sha256:fdd5939e1bd996f41ca09641c48afb549418f4b3ad6e438f7ca7613ad83da289": 470,
+        "sha256:7885241a86db4803ff95b6a8fc60dc132a5f9612a76db786a304cfa8c760f84b": 827
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/clef/27b",
+      "referenced_blobs": 6,
+      "missing_blobs": []
+    },
+    "pplx-decider:latest": {
+      "status": "ok",
+      "blobs": {
+        "sha256:2df145bcbb76ddb70fcd5358eda22d252ca8efaa000936a63d44787eca6e38af": 138,
+        "sha256:d21332302227294c07f7ba8818a39e9bfc42b65743a4ebb0bb4099ea87ab1ef3": 927607296,
+        "sha256:ece25df56bedda9dd6ca196cbfd298c7cfdc5263347416b7d1555148d7cccbe5": 16547401856,
+        "sha256:58e1b82a691f46c155e57be607f1031930ea0cccc22daf4447f91d360f74b2d2": 18,
+        "sha256:f3950da72565e2f60c6005109c55fa1e6fa1dbf37824f172b644e28313e9b435": 851
+      },
+      "manifest_path": "/usr/share/ollama/.ollama/models/manifests/registry.ollama.ai/library/pplx-decider/latest",
+      "referenced_blobs": 5,
+      "missing_blobs": []
+    }
+  }
+}

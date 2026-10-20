@@ -1,0 +1,15 @@
+gpu_uuid,pid,process_name,used_gpu_memory
+GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb,985366,/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3,550
+GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb,985364,/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3,550
+GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb,2932463,/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3,550
+GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb,4057400,/home/arbi/neo4j_rag/backend/.venvNeo4j/bin/python3,550
+GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb,2900656,/usr/local/lib/ollama/llama-server,21352
+GPU-61450550-45cd-6b7f-0a88-f96d5cca83eb,3359843,/usr/local/lib/ollama/llama-server,1944
+GPU-cdc3961a-0ffa-a346-9f18-a667350924f2,1420357,/usr/local/lib/ollama/llama-server,16396
+GPU-cdc3961a-0ffa-a346-9f18-a667350924f2,2900656,/usr/local/lib/ollama/llama-server,12700
+GPU-cdc3961a-0ffa-a346-9f18-a667350924f2,3359843,/usr/local/lib/ollama/llama-server,260
+GPU-0aa50623-1ddb-69c4-60df-61f4855803f9,2706571,/usr/local/lib/ollama/llama-server,20202
+GPU-0aa50623-1ddb-69c4-60df-61f4855803f9,2900656,/usr/local/lib/ollama/llama-server,12762
+GPU-0aa50623-1ddb-69c4-60df-61f4855803f9,3359843,/usr/local/lib/ollama/llama-server,260
+GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb,2900656,/usr/local/lib/ollama/llama-server,18948
+GPU-cf29805d-7a74-c2f3-5a37-fd820465d7eb,3359843,/usr/local/lib/ollama/llama-server,14514
