@@ -62,6 +62,8 @@ Existing LLM2Jev:                    typed assembly → Choice / Noul / Score
 
 All committed evidence, scripts, denominators and caveats are indexed under [experiments/README.md](experiments/README.md). E1/E2 accuracy comparisons are *not* a controlled prompt-only effect, E3 compares deployed pipelines rather than isolating fine-tuning, and E4 does not establish identical-weight logit equivalence. Latency comparisons are observational. E5 supports checkpoint reuse feasibility, not measured resource savings.
 
+<!--
 ## Citation and DOI
 
 Software citation metadata is provided in [`CITATION.cff`](CITATION.cff). **This repository has no registered software DOI yet.** To obtain one, connect the repository to [Zenodo](https://zenodo.org/), enable GitHub archiving and publish a release from the `ollama2jev` branch. Zenodo assigns a DOI after archiving. Add the actual DOI badge and version-specific citation once registered; do not cite a guessed DOI.
+-->
